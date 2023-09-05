@@ -1,3 +1,5 @@
+(THIS was the default readme created after running "npx create-react-app ."; just leaving it here for reference purposes; can probably be deleted later on)
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
