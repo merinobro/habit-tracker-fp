@@ -1,7 +1,8 @@
 import User from "../models/User.js";
 import bcrypt from 'bcrypt';
-import jwt  from "jsonwebtoken";
+import jwt from "jsonwebtoken";
 import { validationResult } from "express-validator";
+import cookieParser from 'cookie-parser'; // Import the `cookie-parser` middleware
 
 // Register a new user
 export const registerUser = async (req, res) => {
@@ -35,11 +36,15 @@ export const registerUser = async (req, res) => {
         id: user.id,
       },
     };
-    res.json({ user })
-    // jwt.sign(payload, process.env.JWT_SECRET, { expiresIn: '1h' }, (err, req.body) => {
-    //   if (err) throw err;
-    //   res.json({ req.body });
-    // });
+
+    //*************************************************************************** */
+    // Sign a JWT token and set it as a cookie
+    jwt.sign(payload, process.env.JWT_SECRET, { expiresIn: '1h' }, (err, token) => {
+      if (err) throw err;
+      // Set the JWT token as a cookie named "token"
+      res.cookie('token', token, { maxAge: 3600000 }); // Cookie expires in 1 hour
+      res.json({ user });
+    });
   } catch (err) {
     console.error(err.message);
     res.status(500).send('Server Error');
@@ -69,9 +74,12 @@ export const loginUser = async (req, res) => {
         id: user.id,
       },
     };
-
+//*****************************User Authentication: Cookies can store authentication tokens, such as JSON Web Tokens (JWTs), to authenticate users on subsequent requests. This eliminates the need for users to provide their credentials (username and password) with each request.**************************************************** */
+    // Sign a JWT token and set it as a cookie
     jwt.sign(payload, process.env.JWT_SECRET, { expiresIn: '1h' }, (err, token) => {
       if (err) throw err;
+      // Set the JWT token as a cookie named "token"
+      res.cookie('token', token, { maxAge: 3600000 }); // Cookie expires in 1 hour
       res.json({ token });
     });
   } catch (err) {
