@@ -1,6 +1,3 @@
-
-console.clear();
-
 import express from 'express';
 import cors from 'cors';
 import dotenv from 'dotenv';
@@ -21,6 +18,10 @@ db.on('error', console.error.bind(console, 'MongoDB connection error:'));
 db.once('open', () => {
   console.log('Connected to MongoDB');
 });
+
+// Import the `cookie-parser` middleware
+import cookieParser from 'cookie-parser';
+app.use(cookieParser());
 
 // Routes
 import authRoutes from './routes/authRoutes.js';
