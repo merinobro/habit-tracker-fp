@@ -1,89 +1,96 @@
 import User from "../models/User.js";
-import bcrypt from 'bcrypt';
+import HabitList from "../models/HabitList.js";
 import jwt from "jsonwebtoken";
-import { validationResult } from "express-validator";
-import cookieParser from 'cookie-parser'; // Import the `cookie-parser` middleware
-
-// Register a new user
-export const registerUser = async (req, res) => {
-  try {
-    // Validate request data
-    const errors = validationResult(req);
-    if (!errors.isEmpty()) {
-      return res.status(400).json({ errors: errors.array() });
-    }
-
-    const { username, email, password } = req.body;
-
-    // Check if the user already exists
-    let user = await User.findOne({ email });
-    if (user) {
-      return res.status(400).json({ msg: 'User already exists' });
-    }
-
-    // Create a new user
-    user = new User({ username, email, password });
-
-    // Hash the password
-    const salt = await bcrypt.genSalt(10);
-    user.password = await bcrypt.hash(password, salt);
-
+const signToken = (id) => {
+    return jwt.sign({ id }, process.env.JWT_SECRET, {
+        expiresIn: process.env.JWT_EXP,
+    });
+};
+const createSendToken = (user, statusCode, res) => {
+    const jwtToken = signToken(user._id);
+    const cookieOptions = {
+        httpOnly: true,
+        secure: process.env.NODE_ENV === "production",
+        sameSite: process.env.NODE_ENV === "production" ? "None" : "lax",
+    };
+    res.cookie("jwtToken", jwtToken, cookieOptions);
+    user.password = undefined;
+    res.status(statusCode).json({
+        message: "success",
+        success: true,
+        status: statusCode,
+        user,
+        jwtToken,
+    });
+};
+const createHabitList = async (user) => {
+    const newHabitList = await HabitList.create({});
+    user.habitListId = newHabitList._id;
     await user.save();
-
-    // Create and return a JWT token for authentication
-    const payload = {
-      user: {
-        id: user.id,
-      },
-    };
-
-    //*************************************************************************** */
-    // Sign a JWT token and set it as a cookie
-    jwt.sign(payload, process.env.JWT_SECRET, { expiresIn: '1h' }, (err, token) => {
-      if (err) throw err;
-      // Set the JWT token as a cookie named "token"
-      res.cookie('token', token, { maxAge: 3600000 }); // Cookie expires in 1 hour
-      res.json({ user });
-    });
-  } catch (err) {
-    console.error(err.message);
-    res.status(500).send('Server Error');
-  }
+};
+export const registerUser = async (req, res, next) => {
+    try {
+        const user = await User.create(req.body);
+        await createHabitList(user);
+        createSendToken(user, 201, res);
+    } catch (error) {
+        /*  if (error.code === 11000) {
+            return next(duplicateFieldsHandler(error.keyValue));
+        } */
+        next(error);
+    }
+};
+export const loginUser = async (req, res, next) => {
+    try {
+        const { email, password } = req.body;
+        if (!email || !password)
+            throw authError(400, "Please provide email and password");
+        const user = await User.findOne({ email });
+        if (!user || !(await user.correctPassword(password, user.password))) {
+            throw authError(401, "Incorrect email or password");
+        }
+        createSendToken(user, 200, res);
+    } catch (error) {
+        next(error);
+    }
+};
+export const logout = async (req, res, next) => {
+    try {
+        removeCookies(res, "jwtToken");
+        res.status(200).json({
+            message: "success",
+            statusCode: 200,
+            data: "Logged out successfully",
+        });
+    } catch (error) {
+        next(error);
+    }
+};
+export const protect = async (req, res, next) => {
+    try {
+        let jwtToken;
+        // This is used to get token from postman
+        const { authorization } = req.headers;
+        if (authorization && authorization.startsWith("Bearer")) {
+            jwtToken = authorization.split(" ")[1];
+        }
+        // This will be used to get token from browser
+        // const jwtToken = req.cookies["jwtToken"];
+        const decoded = jwt.verify(jwtToken, process.env.JWT_SECRET);
+        if (!decoded.id) throw authError(401, "Invalid token");
+        const user = await User.findById(decoded.id);
+        if (!user) throw authError(401, "User not found.");
+        req.user = user;
+        req.isAuthenticated = true;
+        next();
+    } catch (error) {
+        next(error);
+    }
 };
 
-// Login a user
-export const loginUser = async (req, res) => {
-  try {
-    const { email, password } = req.body;
 
-    // Check if the user exists
-    let user = await User.findOne({ email });
-    if (!user) {
-      return res.status(400).json({ msg: 'Invalid credentials' });
-    }
 
-    // Compare the provided password with the stored hash
-    const isMatch = await bcrypt.compare(password, user.password);
-    if (!isMatch) {
-      return res.status(400).json({ msg: 'Invalid credentials' });
-    }
 
-    // Create and return a JWT token for authentication
-    const payload = {
-      user: {
-        id: user.id,
-      },
-    };
-//*****************************User Authentication: Cookies can store authentication tokens, such as JSON Web Tokens (JWTs), to authenticate users on subsequent requests. This eliminates the need for users to provide their credentials (username and password) with each request.**************************************************** */
-    // Sign a JWT token and set it as a cookie
-    jwt.sign(payload, process.env.JWT_SECRET, { expiresIn: '1h' }, (err, token) => {
-      if (err) throw err;
-      // Set the JWT token as a cookie named "token"
-      res.cookie('token', token, { maxAge: 3600000 }); // Cookie expires in 1 hour
-      res.json({ token });
-    });
-  } catch (err) {
-    console.error(err.message);
-    res.status(500).send('Server Error');
-  }
-};
+
+
+
