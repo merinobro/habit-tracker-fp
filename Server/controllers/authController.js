@@ -34,9 +34,6 @@ export const registerUser = async (req, res, next) => {
         await createHabitList(user);
         createSendToken(user, 201, res);
     } catch (error) {
-        /*  if (error.code === 11000) {
-            return next(duplicateFieldsHandler(error.keyValue));
-        } */
         next(error);
     }
 };
@@ -88,9 +85,22 @@ export const protect = async (req, res, next) => {
     }
 };
 
-
-
-
-
-
-
+export const deleteAccount = async (req, res, next) => {
+    try {
+       
+        const { user } = req;
+        // Delete the user
+        await User.findByIdAndDelete(user._id);
+        // Optionally, delete the user's habit list or any other related data
+        await HabitList.findByIdAndDelete(user.habitListId);
+        // Logout the user (if desired)
+        removeCookies(res, "jwtToken");
+        res.status(200).json({
+            message: "success",
+            statusCode: 200,
+            data: "Account deleted successfully",
+        });
+    } catch (error) {
+        next(error);
+    }
+};
