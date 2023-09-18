@@ -19,10 +19,3 @@ dotenv.config();
         mongoose.connection.close();
     }
 })();
-
-
-
-
-
-
-
