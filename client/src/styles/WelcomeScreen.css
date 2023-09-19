@@ -1,0 +1,26 @@
+/* Styles for the overall Welcome Page */
+.welcome-page {
+    background: linear-gradient(180deg, rgb(236, 236, 234) 68.71%, rgb(255, 255, 255) 100%);
+    background-color: rgba(255, 255, 255, 1);
+    height: 640px;
+    position: relative;
+    width: 360px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px; /* Add padding for spacing */
+  }
+  
+  /* Styles for the header/logo */
+  .header {
+    margin-top: 20px; /* Adjust as needed */
+  }
+  
+  /* Styles for the content (inputs, button, and text) */
+  .content {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
