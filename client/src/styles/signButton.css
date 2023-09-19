@@ -1,6 +1,7 @@
     /* Sign-in | Sign-up Button Component */
 
     .sign-button {
+        margin-top: 60px;
         width: 45%;
         height: 7%;
         background-color: #3F3D39;
