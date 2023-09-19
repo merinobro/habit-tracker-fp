@@ -1,7 +1,7 @@
 import React from 'react';
-import '../../styles/style.css'; 
+import '../styles/InputFieldWithHeader.css'; 
 
-function InputWithHeader({ headerText, placeholder, value, onChange }) {
+function InputFieldWithHeader({ headerText, placeholder, value, onChange }) {
   return (
     <div className="input-card">
       <label className="input-header-label">{headerText}</label>
@@ -16,4 +16,4 @@ function InputWithHeader({ headerText, placeholder, value, onChange }) {
   );
 }
 
-export default InputWithHeader;
+export default InputFieldWithHeader;
