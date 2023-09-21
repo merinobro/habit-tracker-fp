@@ -7,6 +7,11 @@ import mongoose from 'mongoose';
 
 import cookieParser from 'cookie-parser';
 
+import nodemailer from 'nodemailer'; 
+
+import { authMiddleware } from './middlewares/authMiddleware.js'
+import { changePassword } from "./controllers/changePasswordController.js";
+
 import authRoutes from './routes/authRoutes.js';
 import habitRoutes from './routes/habitListRoutes.js';
 import { globalErrorHandler, routeNotFound } from './middlewares/errorHandlers.js';
@@ -32,6 +37,42 @@ db.once('open', () => {
 // `cookie-parser` middleware
 app.use(cookieParser());  // Parse cookies sent in the HTTP request
 
+
+// Email configuration
+const transporter = nodemailer.createTransport({
+  service: 'YourEmailServiceProvider', // e.g., 'Gmail'
+  auth: {
+    user: 'your@email.com',
+    pass: 'your-email-password',
+  },
+});
+
+// Route to create a new user profile
+app.post('/auth/signup', (req, res) => {
+  // Extract user data from the request body
+  const { username, email } = req.body;
+
+  // Send an email to the user
+  const mailOptions = {
+    from: 'your@email.com',
+    to: email,
+    subject: 'New User Profile Created',
+    text: `Hello ${username}, Your user profile has been successfully created.`,
+  };
+
+  transporter.sendMail(mailOptions, (error, info) => {
+    if (error) {
+      console.error('Error sending email: ', error);
+      res.status(500).json({ error: 'Failed to send email' });
+    } else {
+      console.log('Email sent: ' + info.response);
+      // Continue with the signup process and send a response to the client
+      // You may want to save the user data to the database here
+      res.status(200).json({ message: 'User profile created and email sent' });
+    }
+  });
+});
+
 // Routes
 
 app.use('/auth', authRoutes);  // Use authentication-related routes
@@ -42,6 +83,10 @@ app.use(routeNotFound);
 
 // Handle global errors with a custom error handler middleware
 app.use(globalErrorHandler);
+
+
+// Route for changing password
+app.post('/change-password', authMiddleware, changePassword);
 
 // Start the server
 app.listen(PORT, () => {
