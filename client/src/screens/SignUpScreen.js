@@ -8,6 +8,7 @@ import '../styles/signUpScreen.css';
 
 
 function SignupForm() {
+
   // State to manage form inputs
   const [formData, setFormData] = useState({
     name: '',
@@ -18,73 +19,47 @@ function SignupForm() {
 
 
 
+const [isRegistered, setIsRegistered] = useState(false);
 
-  //! Handle form input changes
-  const handleInputChange = (e) => {
+  const handleChange = (e) => {
     const { name, value } = e.target;
-    setFormData({
-      ...formData,
-      [name]: value,
-    });
+    setFormData({ ...formData, [name]: value });
   };
 
-  //! Handle form submission
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    // Add your signup logic here (e.g., sending data to a server)
-    console.log(formData);
+
+    // Add form validation logic here if needed
+    if (formData.password !== formData.confirmPassword) {
+      alert('Passwords do not match');
+      return;
+    }
+
+    // Simulate sending data to the server
+    const registrationSuccess = await registerUser(formData);
+
+    if (registrationSuccess) {
+      setIsRegistered(true);
+      setFormData({
+        name: '',
+        email: '',
+        password: '',
+        confirmPassword: '',
+      });
+    }
   };
 
   return (
-    <div className="signup-form">
-      <h2>Sign Up</h2>
-      <form onSubmit={handleSubmit}>
-        <div className="form-group">
-          <label htmlFor="name">Name</label>
-          <input
-            type="text"
-            id="name"
-            name="name"
-            value={formData.name}
-            onChange={handleInputChange}
-            required
-          />
-        </div>
-        <div className="form-group">
-          <label htmlFor="email">Email</label>
-          <input
-            type="email"
-            id="email"
-            name="email"
-            value={formData.email}
-            onChange={handleInputChange}
-            required
-          />
-        </div>
-        <div className="form-group">
-          <label htmlFor="password">Password</label>
-          <input
-            type="password"
-            id="password"
-            name="password"
-            value={formData.password}
-            onChange={handleInputChange}
-            required
-          />
-        </div>
-        <div className="form-group">
-          <label htmlFor="confirmPassword">Confirm Password</label>
-          <input
-            type="password"
-            id="confirmPassword"
-            name="confirmPassword"
-            value={formData.confirmPassword}
-            onChange={handleInputChange}
-            required
-          />
-        </div>
-        <button type="submit">Sign Up</button>
-      </form>
+    <div className="signup-form-container">
+      {isRegistered ? (
+        <p>Registration successful!</p>
+      ) : (
+        <form onSubmit={handleSubmit}>
+          <h2>Sign Up</h2>
+          {/* ... Form input fields ... */}
+          <button type="submit">Sign Up</button>
+        </form>
+      )}
     </div>
   );
 }

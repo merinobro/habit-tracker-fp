@@ -1,0 +1,12 @@
+
+
+.header {
+    padding: 3em;
+    text-align: center;
+  }
+  
+  .header h1 {
+    margin-bottom: 0.2em;
+    font-size: 2rem;
+    color: #000101;
+  }

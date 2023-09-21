@@ -1,15 +1,17 @@
-import header from './components';
+
+
+import React from 'react';
+import '../styles/header.css'
 
 
 
-const header = () => {
-  const date = new Date()
+const Header = props => {
   return (
-    <Nav >
+    <header >
+      <h1> Habit Tracker</h1>
       
-        
-    </Nav>
-  )
-}
+    </header>
+  );
+};
 
-export default header
+export default Header;
