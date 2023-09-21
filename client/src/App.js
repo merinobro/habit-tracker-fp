@@ -2,10 +2,10 @@ import React from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import './styles/App.css';
 import WelcomeScreen from "./screens/WelcomeScreen";
-import SettingsScreen from './screens/SettingsScreen';
-import EditHabitScreen from './screens/EditHabitScreen';
-import ProgressReportScreen from './screens/ProgressReportScreen';
-import MainScreen from './screens/MainScreen';
+import SettingsScreen from "./screens/SettingsScreen";
+import EditHabitScreen from "./screens/EditHabitScreen";
+import ProgressReportScreen from "./screens/ProgressReportScreen";
+import MainScreen from "./screens/MainScreen";
 
 function App() {
   return (

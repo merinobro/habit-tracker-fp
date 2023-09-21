@@ -4,10 +4,10 @@ import "../styles/WelcomeScreen.css"; //styling
 import logoPlaceholder from "../assets/logoPlaceholder.png";
 
 import SignButton from "../components/SignButton";
-//import RegistrationLink from './RegistrationLink';
+import RegistrationLink from '../components/RegistrationLink';
 import InputFieldWithHeader from "../components/InputFieldWithHeader";
 
-function WelcomePage() {
+function WelcomeScreen() {
   const [email, setEmail] = useState("");
   const [isInvalidEmail, setIsInvalidEmail] = useState(false);
 
@@ -48,7 +48,7 @@ function WelcomePage() {
       <img src={logoPlaceholder} alt="Logo" className="logoPlaceholder" />
 
       <InputFieldWithHeader
-        headerText="Email"
+        headerText="email"
         placeholder="Enter your email"
         value={email}
         onChange={handleEmailChange}
@@ -58,7 +58,7 @@ function WelcomePage() {
       )}
 
       <InputFieldWithHeader
-        headerText="Password"
+        headerText="password"
         placeholder="Enter your password"
         type="password"
         value={password}
@@ -72,8 +72,11 @@ function WelcomePage() {
 
       {/* Use the SignButton component with the handleSignInClick function */}
       <SignButton text="Sign-In" onClick={handleSignInClick} />
+
+     {/* the RegistrationLink component */}
+      <RegistrationLink />
     </div>
   );
 }
 
-export default WelcomePage;
+export default WelcomeScreen;
