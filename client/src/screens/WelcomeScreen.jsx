@@ -7,7 +7,7 @@ import SignButton from "../components/SignButton";
 //import RegistrationLink from './RegistrationLink';
 import InputFieldWithHeader from "../components/InputFieldWithHeader";
 
-function WelcomePage() {
+function WelcomeScreen() {
   const [email, setEmail] = useState("");
   const [isInvalidEmail, setIsInvalidEmail] = useState(false);
 
@@ -76,4 +76,4 @@ function WelcomePage() {
   );
 }
 
-export default WelcomePage;
+export default WelcomeScreen;
