@@ -21,8 +21,9 @@ const app = express();
 const PORT = process.env.PORT || 8000;
 
 // Middleware
-app.use(cors());
-app.use(express.json());
+app.use(cors()); // Enable Cross-Origin Resource Sharing (CORS)
+app.use(express.json());  // Parse JSON request bodies
+
 
 // Database Connection
 mongoose.connect(process.env.DB_URI, { useNewUrlParser: true, useUnifiedTopology: true });
@@ -32,8 +33,10 @@ db.once('open', () => {
   console.log('Connected to MongoDB');
 });
 
-// Import the `cookie-parser` middleware
-app.use(cookieParser());
+
+// `cookie-parser` middleware
+app.use(cookieParser());  // Parse cookies sent in the HTTP request
+
 
 // Email configuration
 const transporter = nodemailer.createTransport({
@@ -72,10 +75,13 @@ app.post('/auth/signup', (req, res) => {
 
 // Routes
 
-app.use('/auth', authRoutes);
-app.use('/habits', habitRoutes);
+app.use('/auth', authRoutes);  // Use authentication-related routes
+app.use('/habits', habitRoutes);  // Use habit-related routes
 
+// Handle 404 Not Found errors with a custom middleware
 app.use(routeNotFound);
+
+// Handle global errors with a custom error handler middleware
 app.use(globalErrorHandler);
 
 
@@ -86,3 +92,5 @@ app.post('/change-password', authMiddleware, changePassword);
 app.listen(PORT, () => {
   console.log(`Server is running on port ${PORT}`);
 });
+
+//^ This provides an explanation of the purpose and functionality of each part of your Express.js server setup. Frontend developers can use this information to understand how the server works, how to send requests to it, and how to handle responses and errors.
