@@ -1,6 +1,6 @@
-import React from "react";
-import { BrowserRouter as Router, Route } from "react-router-dom";
-import "./styles/App.css";
+import React from 'react';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import './styles/App.css';
 import WelcomeScreen from "./screens/WelcomeScreen";
 import SettingsScreen from "./screens/SettingsScreen";
 import EditHabitScreen from "./screens/EditHabitScreen";
@@ -11,11 +11,13 @@ function App() {
   return (
     <Router>
       <div className="App">
-        <Route path="/" exact component={MainScreen} />
-        <Route path="/welcome" component={WelcomeScreen} />
-        <Route path="/settings" component={SettingsScreen} />
-        <Route path="/edit-habit" component={EditHabitScreen} />
-        <Route path="/progress-report" component={ProgressReportScreen} />
+        <Routes>
+          <Route path="/" element={<MainScreen />} />
+          <Route path="/welcome" element={<WelcomeScreen />} />
+          <Route path="/settings" element={<SettingsScreen />} />
+          <Route path="/edit-habit" element={<EditHabitScreen />} />
+          <Route path="/progress-report" element={<ProgressReportScreen />} />
+        </Routes>
       </div>
     </Router>
   );
