@@ -1,0 +1,33 @@
+.label {
+    
+    padding-top: 65px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 42px;
+    width: 293px;
+  }
+  
+  .don-t-have-an {
+    color: #000000;
+    font-family: "Commissioner-Regular", Helvetica;
+    font-size: 18px;
+    font-weight: 400;
+    letter-spacing: -0.26px;
+    line-height: normal;
+    position: relative;
+    bottom: 10px; 
+  }
+  
+  .registration-link {
+    color: blue; 
+    text-decoration: underline; 
+    cursor: pointer; 
+    font-family: "Commissioner-Regular", Helvetica;
+    font-size: 20px;
+    font-weight: 400;
+    letter-spacing: -0.26px;
+    line-height: normal;
+    
+  }
