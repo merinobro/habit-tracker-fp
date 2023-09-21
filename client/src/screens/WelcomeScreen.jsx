@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import "../styles/WelcomeScreen.css"; //styling
 
-import logoPlaceholder from "../imgs/logoPlaceholder.png";
+import logoPlaceholder from "../assets/logoPlaceholder.png";
 
 import SignButton from "../components/SignButton";
 //import RegistrationLink from './RegistrationLink';
