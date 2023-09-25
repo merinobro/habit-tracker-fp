@@ -1,0 +1,40 @@
+main-screen-light {
+  background-color: rgba(255, 255, 255, 1);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  width: 100%;
+  background: linear-gradient(
+    180deg,
+    rgb(236, 236, 234) 68.71%,
+    rgb(255, 255, 255) 100%
+  );
+  background-color: rgba(255, 255, 255, 1);
+  height: 640px;
+  overflow: hidden;
+  position: relative;
+  width: 360px;
+}
+.main-screen-light .div {
+  background: linear-gradient(
+    180deg,
+    rgb(236, 236, 234) 68.71%,
+    rgb(255, 255, 255) 100%
+  );
+  background-color: rgba(255, 255, 255, 1);
+  height: 640px;
+  overflow: hidden;
+  position: relative;
+  width: 360px;
+}
+
+.habit-card-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px; /* Adjust the gap between HabitCards as needed */
+  margin-top: 20px; /* Add top margin to separate it from the header */
+  overflow-y: auto; /* Add vertical scrollbar if necessary */
+  max-height: 70%; /* Adjust the maximum height as needed */
+}
