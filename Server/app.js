@@ -3,6 +3,8 @@ import express from 'express';
 import cors from 'cors';
 import dotenv from 'dotenv';
 import mongoose from 'mongoose';
+// import {createServer} from "http";
+// import {Server} from "socket.io";
 
 import cookieParser from 'cookie-parser';
 
@@ -15,9 +17,11 @@ import authRoutes from './routes/authRoutes.js';
 import habitRoutes from './routes/habitListRoutes.js';
 import { globalErrorHandler, routeNotFound } from './middlewares/errorHandlers.js';
 
+
 dotenv.config();
 const app = express();
 const PORT = process.env.PORT || 8000;
+
 
 // Middleware
 app.use(cors()); // Enable Cross-Origin Resource Sharing (CORS)
@@ -51,6 +55,8 @@ app.post('/auth/signup', (req, res) => {
   // Extract user data from the request body
   const { username, email } = req.body;
 
+
+
   // Send an email to the user
   const mailOptions = {
     from: 'your@email.com',
@@ -72,6 +78,8 @@ app.post('/auth/signup', (req, res) => {
   });
 });
 
+
+
 // Routes
 
 app.use('/auth', authRoutes);  // Use authentication-related routes
@@ -87,7 +95,7 @@ app.use(globalErrorHandler);
 // Route for changing password
 app.post('/change-password', authMiddleware, changePassword);
 
-// Start the server
+//Start the server
 app.listen(PORT, () => {
   console.log(`Server is running on port ${PORT}`);
 });
