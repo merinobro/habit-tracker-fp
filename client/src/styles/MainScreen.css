@@ -33,8 +33,8 @@ main-screen-light {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 16px; /* Adjust the gap between HabitCards as needed */
-  margin-top: 20px; /* Add top margin to separate it from the header */
-  overflow-y: auto; /* Add vertical scrollbar if necessary */
-  max-height: 70%; /* Adjust the maximum height as needed */
+  gap: 16px; 
+  margin-top: 20px; 
+  overflow-y: auto; 
+  max-height: 70%; 
 }
