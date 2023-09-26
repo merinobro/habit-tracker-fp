@@ -4,15 +4,15 @@
   }
   
   .rectangle-eat-card {
-    background-color: red;
+    background-color:white;
     border-radius: 6px;
     height: 41px;
     position: relative;
-    width: 300px;
+    width: 250px;
   }
   
   .input-container {
-    color: blue;
+   
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -20,14 +20,19 @@
   }
   
   .card-input {
-    
+    border-radius: 6px;
     flex: 1; /* Allowing input field to expand and take remaining space */
     height: 100%;
     border: none;
     outline: none;
     padding: 0 10px; /* padding for creating space between input and checkbox */
+   
   }
   
   .card-checkbox {
-    width: auto; /* Adjust the checkbox width as needed */
-  }
+    width: 24px;
+    height: 24px; 
+    margin-right: 20px;
+     }
+
+   
