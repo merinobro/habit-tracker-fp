@@ -3,33 +3,6 @@
 the Menubar component needs the correct activeScreen prop:
 <MenuBar activeScreen="main" /> */
 
-// That worked before I added the button and its functionality:
-
-// import React from "react";
-// import "../styles/MainScreen.css";
-// import Header from "../components/Header";
-// import MenuBar from "../components/Menubar";
-// import HabitCard from "../components/HabitCard";
-
-
-// const MainScreen = () => {
-//     return (
-//       <div className="main-screen-light">
-        
-//         <div className="div">
-//         <Header />
-        
-//           <HabitCard />
-          
-
-//           <MenuBar activeScreen="main" />
-//         </div>
-        
-//       </div>
-//     );
-//   };
-
-// export default MainScreen; 
 
 
 import React, { useState } from "react";
