@@ -12,7 +12,7 @@
   
   .menu-bar a {
     height: 50%;
-    /* maybe this is needed if with the resize (60% -> 50%) the icons appear to be off center
+    /* maybe this is needed if with the resize (60% -> 55%) the icons appear to be off center
 
     display: flex;
     justify-content: center;
