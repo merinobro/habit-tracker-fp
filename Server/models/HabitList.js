@@ -17,12 +17,18 @@ const habitSchema = new Schema({
             },
             frequency: {
                 type: String,
-                enum: ["daily", "weekly", "monthly"],
+                //enum: ["daily", "weekly", "monthly"],
                 required: true,
             },
             createdAt: {
                 type: Date,
                 default: Date.now,
+            },
+            progress: {
+                type: Number, 
+                min: 0,
+                max: 30,
+                default: 0
             },
         },
     ],

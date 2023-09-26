@@ -7,6 +7,7 @@ import {
   updateHabitById,
   deleteAllHabits,
   deleteHabitById,
+  updateProgress,
 } from "../controllers/habitListController.js";
 
 const router = express.Router();
@@ -26,8 +27,8 @@ router
   .post(createHabit)  // Controller function to create a habit
   .get(getHabitById)  // Controller function to retrieve a specific habit
   .put(updateHabitById)  // Controller function to update a specific habit
+  .patch(updateProgress) // Controller to update the number 
   .delete(deleteHabitById);  // Controller function to delete a specific habit
-
 export default router;
 
 //^This provides a clear overview of each route's purpose and the HTTP methods they support. Frontend developers can use this information to understand how to make requests to these endpoints and handle responses from the server.
