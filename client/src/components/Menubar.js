@@ -8,12 +8,6 @@ import listIcon from '../assets/list.svg';
 import progressIcon from '../assets/progress.svg';
 import homeIcon from '../assets/home.svg';
 
-// Importing SVGs first, instead of linking directly from ../assets in each link, to ensure correct rendering
-import settingsIcon from '../assets/settings.svg';
-import listIcon from '../assets/list.svg';
-import progressIcon from '../assets/progress.svg';
-import homeIcon from '../assets/home.svg';
-
 function MenuBar({ activeScreen }) {
   return (
     <nav className="menu-bar">
