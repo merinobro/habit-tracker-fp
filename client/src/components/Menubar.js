@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import './MenuBar.css';
+import '../styles/Menubar.css';
 
 // Importing SVGs first, instead of linking directly from ../assets in each link, to ensure correct rendering
 import settingsIcon from '../assets/settings.svg';
