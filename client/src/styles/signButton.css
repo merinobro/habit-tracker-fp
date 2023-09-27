@@ -1,10 +1,9 @@
     /* Sign-in | Sign-up Button Component */
-    * { margin: 0; padding: 0; box-sizing: border-box; } 
 
-    #SignButton {
-        width: 7%;
-        padding: 10px;
-        height: 7%;
+    .sign-button {
+        margin-top: 65px;
+        width: 45%;
+        height: 50px;
         background-color: #3F3D39;
         color: #FFFFFF;
         border-radius: 4px;
@@ -14,9 +13,7 @@
         text-align: center;
         justify-content: center;
         align-items: center;
-        font-family: 'Commissioner', sans-serif;
-        
-        
+        font-family: 'Comissioner-Regular', sans-serif;
       }
       
       .sign-button:hover,
@@ -24,8 +21,5 @@
         background-color: #FFFFFF;
         color: #3F3D39;
         border: 1px solid #3F3D39;
-
-      
-      
-        
+        cursor: pointer;
       }

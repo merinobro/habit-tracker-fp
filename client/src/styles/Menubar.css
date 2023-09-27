@@ -1,0 +1,30 @@
+.menu-bar {
+  /* position: relative;
+  align-self: flex-end; */
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 12.5%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  background-color: #FFFFFF;
+  border-top: 2px solid #000000;
+  }
+  
+  .menu-bar a {
+    height: 50%;
+    /* maybe this is needed if with the resize (60% -> 55%) the icons appear to be off center
+
+    display: flex;
+    justify-content: center;
+    align-items: center; */
+  }
+  
+  .menu-bar img {
+    height: 100%;
+  }
+  
+  .menu-bar a.active img {
+    border-bottom: 2px solid #3F3D39;
+  }

@@ -18,6 +18,11 @@ export const authMiddleware = async (req, res, next) => {
     // Add the user to the request object
     req.user = decoded.user;
 
+    // Check if the user's current password is provided in the request
+    if (!req.body.currentPassword) {
+      return res.status(400).json({ msg: 'Current password is required for this action' });
+  }
+
     // Proceed to the next middleware or route handler
     next();
   } catch (err) {

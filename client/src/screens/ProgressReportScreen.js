@@ -1,17 +1,4 @@
+/* RE: Menubar
 
-
-import React from 'react';
-import '../styles/progressReportTitle.css'
-
-
-
-const ProgressReportScreen = props => {
-  return (
-    <header>
-      <h1> Habit Tracker</h1>
-      
-    </header>
-  );
-};
-
-export default ProgressReportScreen;
+the Menubar component needs the correct activeScreen prop:
+<MenuBar activeScreen="progress-report" /> */
