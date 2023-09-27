@@ -3,7 +3,7 @@ import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import './styles/App.css';
 import WelcomeScreen from "./screens/WelcomeScreen";
 import SettingsScreen from './screens/Settings/SettingsScreen';
-import EditHabitScreen from "./screens/EditHabitScreen";
+/* import EditHabitScreen from "./screens/EditHabitScreen"; */
 import ProgressReportScreen from "./screens/ProgressReportScreen";
 import MainScreen from "./screens/MainScreen";
 
@@ -15,7 +15,7 @@ function App() {
           <Route path="/" element={<MainScreen />} />
           <Route path="/welcome" element={<WelcomeScreen />} />
           <Route path="/settings" element={<SettingsScreen />} />
-          <Route path="/edit-habit" element={<EditHabitScreen />} />
+          {/* <Route path="/edit-habit" element={<EditHabitScreen />} /> */}
           <Route path="/progress-report" element={<ProgressReportScreen />} />
         </Routes>
       </div>
