@@ -1,0 +1,38 @@
+.box {
+    height: 41px;
+    width: 300px;
+  }
+  
+  .rectangle-eat-card {
+    background-color:white;
+    border-radius: 6px;
+    height: 41px;
+    position: relative;
+    width: 250px;
+  }
+  
+  .input-container {
+   
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 100%;
+  }
+  
+  .card-input {
+    border-radius: 6px;
+    flex: 1; /* Allowing input field to expand and take remaining space */
+    height: 100%;
+    border: none;
+    outline: none;
+    padding: 0 10px; /* padding for creating space between input and checkbox */
+   
+  }
+  
+  .card-checkbox {
+    width: 24px;
+    height: 24px; 
+    margin-right: 20px;
+     }
+
+   

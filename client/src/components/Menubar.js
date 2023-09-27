@@ -1,6 +1,12 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import './MenuBar.css';
+import '../styles/Menubar.css';
+
+// Importing SVGs first, instead of linking directly from ../assets in each link, to ensure correct rendering
+import settingsIcon from '../assets/settings.svg';
+import listIcon from '../assets/list.svg';
+import progressIcon from '../assets/progress.svg';
+import homeIcon from '../assets/home.svg';
 
 // Importing SVGs first, instead of linking directly from ../assets in each link, to ensure correct rendering
 import settingsIcon from '../assets/settings.svg';
