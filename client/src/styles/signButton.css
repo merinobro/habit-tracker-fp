@@ -8,8 +8,9 @@
         color: #FFFFFF;
         border-radius: 4px;
         border: none;
-        font-size: 1.5em; /* Adjust as needed */
+        font-size: 0.9em; /* Adjust as needed */
         display: flex;
+        text-align: center;
         justify-content: center;
         align-items: center;
         font-family: 'Comissioner-Regular', sans-serif;
