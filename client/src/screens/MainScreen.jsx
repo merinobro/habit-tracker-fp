@@ -61,21 +61,6 @@ const MainScreen = () => {
   // Initialize habitData as an empty array
   const [habitData, setHabitData] = useState([]);
 
-  // Load habit data from local storage when the component mounts
-
-  // useEffect(() => {
-  //   console.log("Attempting to load habit data...");
-  //   const storedData = localStorage.getItem("habitData");
-  //   if (storedData) {
-  //     const parsedData = JSON.parse(storedData);
-  //     if (Array.isArray(parsedData)) {
-  //       console.log("Loaded habit data:", parsedData);
-  //       setHabitData(parsedData);
-  //     } else {
-  //       console.error("Invalid habit data format:", parsedData);
-  //     }
-  //   }
-  // }, []);
 
   useEffect(() => {
     console.log("Attempting to load habit data...");
