@@ -1,11 +1,9 @@
-
-
 import React from 'react';
 import '../styles/signButton.css';
 
 function Button({ text }) {
   return (
-    <button className="SignButton">Sign Up
+    <button className="sign-button">
       {text}
     </button>
   );
