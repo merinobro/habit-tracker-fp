@@ -1,67 +1,98 @@
 
+import React, { useState } from "react";
+import "../styles/signUpScreen.css";
+import SignButton from "../components/SignButton"
 
 
 
-import React, { useState } from 'react';
-import '../styles/signUpScreen.css';
 
 
 
-function SignupForm() {
-
-  // State to manage form inputs
+function SignUpForm() {
   const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    password: '',
-    confirmPassword: '',
+    name: "",
+    email: "",
+    password: "",
+    confirmPassword: "",
   });
-
-
-
-const [isRegistered, setIsRegistered] = useState(false);
-
   const handleChange = (e) => {
     const { name, value } = e.target;
-    setFormData({ ...formData, [name]: value });
+    setFormData({
+      ...formData,
+      [name]: value,
+    });
   };
-
-  const handleSubmit = async (e) => {
+  const handleSubmit = (e) => {
     e.preventDefault();
-
-    // Add form validation logic here if needed
-    if (formData.password !== formData.confirmPassword) {
-      alert('Passwords do not match');
-      return;
-    }
-
-    // Simulate sending data to the server
-    const registrationSuccess = await registerUser(formData);
-
-    if (registrationSuccess) {
-      setIsRegistered(true);
-      setFormData({
-        name: '',
-        email: '',
-        password: '',
-        confirmPassword: '',
-      });
-    }
+    // You can perform your registration logic here using formData
+    console.log("Form Data:", formData);
   };
-
   return (
-    <div className="signup-form-container">
-      {isRegistered ? (
-        <p>Registration successful!</p>
-      ) : (
-        <form onSubmit={handleSubmit}>
-          <h2>Sign Up</h2>
-          {/* ... Form input fields ... */}
-          <button type="submit">Sign Up</button>
-        </form>
-      )}
+    <div className="container">
+      <h2>Sign Up Here</h2>
+      <form onSubmit={handleSubmit}>
+        <div>
+          <label htmlFor="name">Name:</label>
+          <input
+            type="text"
+            id="name"
+            name="name"
+            value={formData.name}
+            onChange={handleChange}
+            required
+          />
+        </div>
+        <div>
+          <label htmlFor="email">Email:</label>
+          <input
+            type="email"
+            id="email"
+            name="email"
+            value={formData.email}
+            onChange={handleChange}
+            required
+          />
+        </div>
+        <div>
+          <label htmlFor="confirmEmail">Confirm Email:</label>
+          <input
+            type="email"
+            id="confirmEmail"
+            name="confirmEmail"
+            value={formData.confirmEmail}
+            onChange={handleChange}
+            required
+          />
+        </div>
+        <div>
+          <label htmlFor="password">Password:</label>
+          <input
+            type="password"
+            id="password"
+            name="password"
+            value={formData.password}
+            onChange={handleChange}
+            required
+          />
+
+          
+        </div>
+        <div>
+          <label htmlFor="confirmPassword">Confirm Password:</label>
+          <input
+            type="password"
+            id="confirmPassword"
+            name="confirmPassword"
+            value={formData.confirmPassword}
+            onChange={handleChange}
+            required
+          />
+        </div>
+        <div className="Sign-button">
+         <SignButton></SignButton>
+        </div>
+      </form>
     </div>
   );
 }
-
-export default SignupForm;
+export default SignUpForm;
