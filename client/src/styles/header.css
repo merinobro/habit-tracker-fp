@@ -1,7 +1,7 @@
 .header-container {
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
+  align-items: center;
   width: 100%;
 }
 
@@ -9,10 +9,12 @@
   font-family: 'Commissioner-Regular', sans-serif;
   font-size: 3rem; /* Ruppert 0928: not 100% sure the size is perfect, as the Figma shows 36px – so this is just a starting point and will be adjusted as needed */
   color: #000000;
+  align-self: flex-start;
+  margin-left: 2rem;
 }
 
 .header-divider {
-  width: 84%;
+  width: 90%;
   border: 0;
   border-top: 1px solid rgba(63, 61, 57, 0.2);
   margin-top: 10%; /* Ruppert 0928: not 100% sure this is the right value, have to test it myself once I get to building the SignUp Screen next, where I will import the header */
