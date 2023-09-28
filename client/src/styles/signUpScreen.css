@@ -1,4 +1,21 @@
-* { margin: 0; padding: 0; box-sizing: border-box; } 
+.signup-screen-container {
+  background: linear-gradient(180deg, rgb(236, 236, 234) 68.71%, rgb(255, 255, 255) 100%);
+  background-color: rgba(255, 255, 255, 1);
+  height: 640px; 
+  position: relative;
+  width: 360px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px; /* Add padding for spacing */
+}
+
+
+
+
+
+/* -------- Commented out all of George's code from 0927 below ---- */
+/* * { margin: 0; padding: 0; box-sizing: border-box; } 
 
 .signup-form {
     max-width: 400px;
@@ -20,10 +37,7 @@
     padding: 5px;
     
   }
-  
- /*  .form-group {
-    margin-bottom: 10px;
-  } */
+
   
   label {
     display: block;
@@ -49,7 +63,7 @@
   
   /* comment from Ruppert 0927: you use the selector "button" – yet no such element exists in the JS file? */
 
-   button {
+/*    button {
     width: 7%;
     padding: 10px;
     background-color: #3d3e3e;
@@ -78,4 +92,4 @@
    
   
    
-}
+} */

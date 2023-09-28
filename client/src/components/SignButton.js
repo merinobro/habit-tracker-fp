@@ -1,5 +1,5 @@
 import React from 'react';
-import '../styles/signButton.css';
+import '../styles/SignButton.css';
 
 function Button({ text }) {
   return (
