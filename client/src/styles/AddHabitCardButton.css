@@ -1,15 +1,12 @@
 .add-habit-card-button {
-    background-color: #007bff; 
-    color: #fff; /* Text color */
-    margin-top: 20px;
-    border: none;
-    border-radius: 5px;
-    padding: 10px 20px;
-    font-size: 16px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-  }
+  width: 75px;
+  height: 75px;
+  position: absolute;
+  bottom: 140px; /* Adjust the distance from the bottom as needed */
+  left: 50%;
+  transform: translateX(-50%);
+  cursor: pointer;
   
-  .add-habit-card-button:hover {
-    background-color: #0056b3; 
-  }
+}
+  
+  
