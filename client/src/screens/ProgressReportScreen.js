@@ -11,13 +11,13 @@ import Menubar from "../components/Menubar.js";
 const ProgressReportScreen = () => {
   return (
     <div className="progress-screen">
-      <div><Header/></div>
+      <Header/>
       <div>
         <ProgressReportCard />
         <ProgressReportCard />
         <ProgressReportCard />
       </div>
-      <div><Menubar/></div>
+      <Menubar/>
     </div>
   );
 };
