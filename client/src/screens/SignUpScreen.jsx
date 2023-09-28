@@ -1,5 +1,31 @@
+import React from 'react';
+import Header from '../components/Header';
+import InputFieldWithHeader from '../components/InputFieldWithHeader';
+import Button from '../components/SignButton';
+import '../styles/SignUpScreen.css';
 
-import React, { useState } from "react";
+function SignUpScreen() {
+  return (
+    <div className="signup-screen-container">
+      <Header title="Create Account" />
+      <InputFieldWithHeader headerText="Name" placeholder="your name" /* value and onChange can be added later */ />
+      <InputFieldWithHeader headerText="Email" placeholder="your email" /* value and onChange can be added later */ />
+      <InputFieldWithHeader headerText="Password" placeholder="password" /* value, type, and onChange can be added later */ />
+      <InputFieldWithHeader headerText="Confirm Password" placeholder="password" /* value, type, and onChange can be added later */ />
+      <Button text="Sign Up" />
+    </div>
+  );
+}
+
+export default SignUpScreen;
+
+
+
+
+
+/* -------------- George's code from 0927 below ---------- */
+
+/* import React, { useState } from "react";
 import "../styles/signUpScreen.css";
 import SignButton from "../components/SignButton"
 
@@ -95,4 +121,4 @@ function SignUpForm() {
     </div>
   );
 }
-export default SignUpForm;
+export default SignUpForm; */

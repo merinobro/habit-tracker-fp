@@ -8,12 +8,13 @@
         color: #FFFFFF;
         border-radius: 4px;
         border: none;
-        font-size: 0.9em; /* Adjust as needed */
+        font-size: 2rem; /* Adjust as needed */
         display: flex;
         text-align: center;
         justify-content: center;
         align-items: center;
         font-family: 'Commissioner-Regular', sans-serif;
+        font-weight: 900;
       }
       
       .sign-button:hover,

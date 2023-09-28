@@ -71,7 +71,7 @@ function WelcomeScreen() {
       )}
 
       {/* Use the SignButton component with the handleSignInClick function */}
-      <SignButton text="Sign-In" onClick={handleSignInClick} />
+      <SignButton text="LOG IN" onClick={handleSignInClick} />
 
      {/* the RegistrationLink component */}
       <RegistrationLink />

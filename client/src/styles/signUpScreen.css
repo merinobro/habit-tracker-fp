@@ -1,4 +1,16 @@
-* { margin: 0; padding: 0; box-sizing: border-box; } 
+.signup-screen-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* This will center-align the content */
+  padding: 20px; /* Adjust as needed */
+}
+
+
+
+
+
+/* -------- Commented out all of George's code from 0927 below ---- */
+/* * { margin: 0; padding: 0; box-sizing: border-box; } 
 
 .signup-form {
     max-width: 400px;
@@ -20,10 +32,7 @@
     padding: 5px;
     
   }
-  
- /*  .form-group {
-    margin-bottom: 10px;
-  } */
+
   
   label {
     display: block;
@@ -49,7 +58,7 @@
   
   /* comment from Ruppert 0927: you use the selector "button" – yet no such element exists in the JS file? */
 
-   button {
+/*    button {
     width: 7%;
     padding: 10px;
     background-color: #3d3e3e;
@@ -78,4 +87,4 @@
    
   
    
-}
+} */
