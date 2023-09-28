@@ -8,11 +8,14 @@
         color: #FFFFFF;
         border-radius: 4px;
         border: none;
-        font-size: 1.5em; /* Adjust as needed */
+        font-size: 2rem; /* Adjust as needed */
         display: flex;
+        text-align: center;
         justify-content: center;
         align-items: center;
-        font-family: 'Comissioner-Regular', sans-serif;
+        font-family: 'Commissioner-Regular', sans-serif;
+        font-weight: 600;
+        transition: background-color 0.3s, color 0.3s, border 0.3s;
       }
       
       .sign-button:hover,

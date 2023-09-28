@@ -1,0 +1,78 @@
+.progress-screen {
+  position: relative;
+  background-color: rgba(255, 255, 255, 1);
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  width: 100%;
+  background: linear-gradient(
+    180deg,
+    rgb(236, 236, 234) 68.71%,
+    rgb(255, 255, 255) 100%
+  );
+  background-color: rgba(255, 255, 255, 1);
+  height: 640px;
+  overflow: hidden;
+  position: relative;
+  width: 360px;
+}
+
+.progress-card {
+  font-family: "Commissioner-Regular", sans-serif;
+
+  padding: 10px;
+  margin: 30px;
+  max-width: 250px; /* Adjust the width as needed */
+  text-align: center;
+  border-radius: 5px;
+  background-color: #ffffff;
+
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+  margin-top: 15px;
+  margin-bottom: 15px;
+  overflow-y: auto;
+  max-height: 70%;
+}
+
+.top-section {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+  width: 100%;
+}
+
+.habit-name {
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.progress-text {
+  font-size: 14px;
+}
+
+.progress-bar {
+  background-color: #f0f0f0;
+  height: 10px;
+  position: relative;
+}
+
+.progress {
+  background-color: #000;
+  height: 100%;
+}
+
+/* Black and white progress bar */
+.progress-bar {
+  background-color: #d6d6d4;
+  height: 5px;
+  position: relative;
+}
+
+.progress {
+  background-color: #3f3d39;
+  height: 100%;
+  border-radius: 5px;
+}

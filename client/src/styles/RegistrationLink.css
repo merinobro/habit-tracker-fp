@@ -1,3 +1,5 @@
+/* comment from Ruppert 0927: not really understanding the purpose of this file that George added with his last commit; it looks like it has to do with the signUpScreen, but it's not being imported there...?*/
+
 .label {
     
     padding-top: 65px;
@@ -9,6 +11,8 @@
     width: 293px;
   }
   
+  /* not sure what this selector below is for, no element like that exists in the signUpScreen.js? */
+
   .don-t-have-an {
     color: #000000;
     font-family: "Commissioner-Regular", Helvetica;
@@ -25,7 +29,7 @@
     text-decoration: underline; 
     cursor: pointer; 
     font-family: "Commissioner-Regular", Helvetica;
-    font-size: 20px;
+    font-size: 18px;
     font-weight: 400;
     letter-spacing: -0.26px;
     line-height: normal;

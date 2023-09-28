@@ -1,0 +1,25 @@
+/* CSS RESET */
+
+:root {
+    font-size: 62.5%;
+}
+*, *::before, *::after {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    font: inherit;
+}
+img, picture, svg, video {
+    display: block;
+    max-width: 100%;
+}
+body {
+    min-height: 100vh;
+}
+
+body {
+    margin: 0;
+    font-family: 'Commissioner-Regular', sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }

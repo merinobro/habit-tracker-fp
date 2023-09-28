@@ -20,11 +20,13 @@
   }
   
   .card-input {
+    
     border-radius: 6px;
     flex: 1; /* Allowing input field to expand and take remaining space */
     height: 100%;
     border: none;
     outline: none;
+    
     padding: 0 10px; /* padding for creating space between input and checkbox */
    
   }
@@ -34,5 +36,3 @@
     height: 24px; 
     margin-right: 20px;
      }
-
-   
