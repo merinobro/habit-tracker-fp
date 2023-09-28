@@ -8,10 +8,10 @@ function SignUpScreen() {
   return (
     <div className="signup-screen-container">
       <Header title="Create Account" />
-      <InputFieldWithHeader headerText="Name" placeholder="your name" /* value and onChange can be added later */ />
-      <InputFieldWithHeader headerText="Email" placeholder="your email" /* value and onChange can be added later */ />
-      <InputFieldWithHeader headerText="Password" placeholder="password" /* value, type, and onChange can be added later */ />
-      <InputFieldWithHeader headerText="Confirm Password" placeholder="password" /* value, type, and onChange can be added later */ />
+      <InputFieldWithHeader headerText="name" placeholder="your name" /* value and onChange can be added later */ />
+      <InputFieldWithHeader headerText="email" placeholder="your email" /* value and onChange can be added later */ />
+      <InputFieldWithHeader headerText="password" placeholder="password" /* value, type, and onChange can be added later */ />
+      <InputFieldWithHeader headerText="confirm password" placeholder="password" /* value, type, and onChange can be added later */ />
       <Button text="Sign Up" />
     </div>
   );
