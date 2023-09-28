@@ -1,0 +1,55 @@
+.progress-screen {
+    max-width: 300px;
+}
+
+.progress-card {
+    font-family: 'Commissioner-Regular', sans-serif;
+    border: 1px solid #ccc;
+    padding: 20px;
+    margin: 10px;
+    max-width: 300px; /* Adjust the width as needed */
+    text-align: center;
+    border-radius: 5px;
+    background-color: #FFFFFF;
+  }
+  
+  .top-section {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+    width: 100%;
+  }
+  
+  .habit-name {
+    font-size: 18px;
+    font-weight: bold;
+  }
+  
+  .progress-text {
+    font-size: 14px;
+  }
+  
+  .progress-bar {
+    background-color: #f0f0f0;
+    height: 10px;
+    position: relative;
+  }
+  
+  .progress {
+    background-color: #000;
+    height: 100%;
+  }
+  
+  /* Black and white progress bar */
+  .progress-bar {
+    background-color: #D6D6D4;
+    height: 5px;
+    position: relative;
+  }
+  
+  .progress {
+    background-color: #3F3D39;
+    height: 100%;
+    border-radius: 5px;
+  }
