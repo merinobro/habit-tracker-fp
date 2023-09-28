@@ -1,0 +1,26 @@
+.confirmation-message {
+    color: black;
+  }
+  
+  .delete-button {
+    color: red;
+  }
+
+  .delete {
+    color: red;
+  }
+
+.text-wrapper {
+    color: #e34242;
+    font-family: "Commissioner", Helvetica;
+    font-size: 20px;
+    font-weight: 400;
+    height: 24px;
+    left: 26px;
+    letter-spacing: -0.3px;
+    line-height: normal;
+    position: absolute;
+    text-align: center;
+    top: 479px;
+    white-space: nowrap;
+  }

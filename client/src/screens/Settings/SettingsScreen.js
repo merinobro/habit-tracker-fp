@@ -3,20 +3,35 @@
 the Menubar component needs the correct activeScreen prop:
 <MenuBar activeScreen="settings" /> */
 
-import DarkMode from "./Theme.js";
+import React from "react";
 import ChangePassword from "./ChangePassword.js";
+import Logout from "./LogOut.js";
 import DeleteAccount from "./DeleteAccount.js";
-import "./SettingsScreen.css";
+import MenuBar from "../../components/Menubar.js";
+import "../../styles/Menubar.css";
+import "../../styles/MainScreen.css";
+import "../Settings/SettingsScreen.css";
+import DarkMode from "./DarkMode.js";
+import StrikeThrough from "./StrikeThrough.js";
 
 const SettingsScreen = () => {
-
-    return(
-        <>
+  return (
+    <>
+        <div className="main-screen-light">
+            <h1 className="settings-heading ">Settings</h1> 
+            <hr class="line-separation"></hr>
             <DarkMode/>
-            <ChangePassword/>
+            <StrikeThrough/>
+            <ChangePassword />
+            <Logout />
             <DeleteAccount />
-        </>
-    )
-}
+            <MenuBar />
+         </div>
+      
+    </>
+  );
+};
 
-export default SettingsScreen
+export default SettingsScreen;
+
+        

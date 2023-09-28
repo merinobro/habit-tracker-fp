@@ -1,0 +1,27 @@
+.settings-heading {
+  /* color: #000000; */
+  font-family: "Commissioner", Helvetica;
+  font-size: 36px;
+  font-weight: 400;
+  height: 29px;
+  left: -58px;
+  letter-spacing: -0.54px;
+  line-height: normal;
+  position: absolute;
+  text-align: center;
+  top: 36px;
+  white-space: nowrap;
+  width: 297px;
+}
+
+.line-separation {
+  height: 1px;
+  left: 26px;
+  object-fit: cover;
+  position: absolute;
+  top: 460px;
+  width: 314px;
+}
+
+
+
