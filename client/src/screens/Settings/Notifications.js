@@ -1,11 +1,11 @@
 import React from 'react';
-import "../Settings/StrikeThrough.css";
+import "../Settings/Notifications.css";
 
-const StrikeThrough = () => {
+const Notifications = () => {
  
 return (
     <button className='text-wrapper-5 '>StrikeThrough</button>
   );
 };
 
-export default StrikeThrough;
+export default Notifications;

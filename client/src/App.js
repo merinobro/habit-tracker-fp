@@ -42,8 +42,12 @@ import SettingsScreen from './screens/Settings/SettingsScreen';
 import ProgressReportScreen from "./screens/ProgressReportScreen";
 import MainScreen from "./screens/MainScreen";
 
+
 function App() {
+
+ 
   return (
+
     <Router>
       <div className="App">
         <Routes>
@@ -54,6 +58,7 @@ function App() {
         </Routes>
       </div>
     </Router>
+   
   );
 }
 
