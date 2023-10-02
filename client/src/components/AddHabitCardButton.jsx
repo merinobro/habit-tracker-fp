@@ -1,6 +1,6 @@
 import React from "react";
 import "../styles/AddHabitCardButton.css";
-import addHabitCircleButton from "../assets/add-habit-circle-button.svg"; // Import the image
+import addHabitCircleButton from "../assets/add-habit-circle-button.svg"; 
 
 const AddHabitCardButton = ({ addHabitCard, disabled }) => {
   return (

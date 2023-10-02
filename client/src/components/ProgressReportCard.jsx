@@ -1,7 +1,7 @@
 import React from "react";
 
-import Header from "./Header.js";
-import Menubar from "./Menubar.js";
+// import Header from "./Header.jsx";
+// import Menubar from "./Menubar.jsx";
 
 
 const ProgressReportCard = () => {
