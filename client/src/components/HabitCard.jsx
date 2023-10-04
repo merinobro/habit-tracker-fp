@@ -33,8 +33,9 @@ const HabitCard = ({ habit }) => {
     getHabits(dispatchHabits, usersState.listId);
   };
 
-  const handleCheckboxChange = () => {
-    updateProgress(habit, dispatchHabits, listId);
+  const handleCheckboxChange = async () => {
+    await updateProgress(habit, dispatchHabits, listId);
+    getHabits(dispatchHabits, usersState.listId);
   };
 
   return (
@@ -91,7 +92,3 @@ const HabitCard = ({ habit }) => {
 };
 
 export default HabitCard;
-
-
-
-

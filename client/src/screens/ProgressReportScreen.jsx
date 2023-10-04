@@ -10,16 +10,16 @@ import Menubar from "../components/Menubar.jsx";
 
 const ProgressReportScreen = () => {
   return (
-    <div className="progress-screen">
-      <Header/>
+    <div className='progress-screen'>
+      <Header />
       <div>
         <ProgressReportCard />
         <ProgressReportCard />
         <ProgressReportCard />
       </div>
-      <Menubar/>
+      <Menubar />
     </div>
   );
 };
 
-export default ProgressReportScreen
+export default ProgressReportScreen;

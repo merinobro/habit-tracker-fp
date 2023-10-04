@@ -73,14 +73,18 @@ export const updateHabit = async (habit, newTitle, dispatchHabits, listId) => {
 
 //* ____________________________________________  Update progress __________________________________________________
 
-export const updateProgress = async (habit, dispatchHabits, listId) => {
+export const updateProgress = async (
+  { _id, completed, progress },
+  dispatchHabits,
+  listId
+) => {
   try {
     const response = await axios.patch(
       `http://localhost:8000/habits/${listId}`,
       {
-        habitId: habit._id,
-        progress: habit.progress + 1,
-        completed: true,
+        habitId: _id,
+        progress: completed ? progress - 1 : progress + 1,
+        completed: !completed,
       }
     );
 

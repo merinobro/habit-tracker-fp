@@ -1,10 +1,10 @@
 import React, { useState } from "react";
-import "../styles/WelcomeScreen.css"; //styling
+import "../styles/WelcomeScreen.css";
 
 import logoPlaceholder from "../assets/logoPlaceholder.png";
 
 import SignButton from "../components/SignButton";
-import RegistrationLink from '../components/RegistrationLink';
+import RegistrationLink from "../components/RegistrationLink";
 import InputFieldWithHeader from "../components/InputFieldWithHeader";
 
 function WelcomeScreen() {
@@ -43,13 +43,13 @@ function WelcomeScreen() {
   };
 
   return (
-    <div className="welcome-page">
+    <div className='welcome-page'>
       {/* Logo image */}
-      <img src={logoPlaceholder} alt="Logo" className="logoPlaceholder" />
+      <img src={logoPlaceholder} alt='Logo' className='logoPlaceholder' />
 
       <InputFieldWithHeader
-        headerText="email"
-        placeholder="Enter your email"
+        headerText='email'
+        placeholder='Enter your email'
         value={email}
         onChange={handleEmailChange}
       />
@@ -58,9 +58,9 @@ function WelcomeScreen() {
       )}
 
       <InputFieldWithHeader
-        headerText="password"
-        placeholder="Enter your password"
-        type="password"
+        headerText='password'
+        placeholder='Enter your password'
+        type='password'
         value={password}
         onChange={handlePasswordChange}
       />
@@ -71,9 +71,9 @@ function WelcomeScreen() {
       )}
 
       {/* Use the SignButton component with the handleSignInClick function */}
-      <SignButton text="LOG IN" onClick={handleSignInClick} />
+      <SignButton text='LOG IN' onClick={handleSignInClick} />
 
-     {/* the RegistrationLink component */}
+      {/* the RegistrationLink component */}
       <RegistrationLink />
     </div>
   );
