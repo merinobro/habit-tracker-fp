@@ -1,7 +1,9 @@
+import axios from "axios";
+axios.defaults.withCredentials = true;
+
 export const signup = async (dispatchUsers, data) => {
   try {
     const { username, email, password } = data;
-
     const response = await axios.post(`http://localhost:8000/auth/register`, {
       username,
       email,
@@ -13,3 +15,33 @@ export const signup = async (dispatchUsers, data) => {
     console.log(error);
   }
 };
+
+export const login = async (dispatchUsers, data) => {
+  try {
+    const { email, password } = data;
+    const response = await axios.post(`http://localhost:8000/auth/login`, {
+      email,
+      password,
+    });
+    dispatchUsers({ type: "LOGIN_USER", payload: response.data });
+  } catch (error) {
+    console.log(error);
+  }
+};
+
+/*export const logout = async (dispatchUsers) => {
+  try {
+    await axios.get(`http://localhost:8000/auth/logout`),
+    dispatchUsers({type: "LOGOUT_USER"})
+  } catch (error) {
+    console.log(error);
+  }
+};
+export const deleteAccount = async (dispatchUsers) => {
+  try {
+    await axios.delete(`http://localhost:8000/auth/delete-account`);
+    dispatchUsers({type: "DELETE_ACCOUNT"})
+  } catch (error) {
+    console.log(error);
+  }
+}; */

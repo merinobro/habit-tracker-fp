@@ -9,8 +9,11 @@ import {
   deleteHabitById,
   updateProgress,
 } from "../controllers/habitListController.js";
+import { protect } from "../controllers/authController.js";
 
 const router = express.Router();
+
+router.use(protect);
 
 router.route("/all/:id").get(getHabits).delete(deleteAllHabits);
 
