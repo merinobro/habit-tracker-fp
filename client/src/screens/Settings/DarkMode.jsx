@@ -1,4 +1,5 @@
 import React from "react";
+import "../Settings/DarkMode.css";
 
 function DarkMode() {
   return (
@@ -6,6 +7,7 @@ function DarkMode() {
       <div className={`App `}>
         <button>{"Dark Mode"}</button>
       </div>
+      <hr className="line-separation-4"></hr>
     </div>
   );
 }
