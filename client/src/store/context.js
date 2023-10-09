@@ -16,9 +16,13 @@ export const ContextProvider = ({ children }) => {
     usersInitialState
   );
 
+  const { isUserLoggedIn, listId } = usersState;
+
   useEffect(() => {
-    getHabits(dispatchHabits, usersState.listId);
-  }, []);
+    if (isUserLoggedIn && listId) {
+      getHabits(dispatchHabits, listId);
+    }
+  }, [isUserLoggedIn, listId]);
 
   return (
     <DataContext.Provider

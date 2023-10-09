@@ -1,79 +1,78 @@
-import React, { useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
 import "../styles/WelcomeScreen.css";
+import "../styles/InputFieldWithHeader.css";
 
 import logoPlaceholder from "../assets/logoPlaceholder.png";
 
-import SignButton from "../components/SignButton";
 import RegistrationLink from "../components/RegistrationLink";
-import InputFieldWithHeader from "../components/InputFieldWithHeader";
+import { login } from "../apiCalls/usersApiCalls";
+import { DataContext } from "../store/context";
+import Header from "../components/Header";
 
 function WelcomeScreen() {
-  const [email, setEmail] = useState("");
-  const [isInvalidEmail, setIsInvalidEmail] = useState(false);
+  const { dispatchUsers, usersState } = useContext(DataContext);
+  const navigate = useNavigate();
 
-  const [password, setPassword] = useState("");
-  const [isInvalidPassword, setIsInvalidPassword] = useState(false);
+  const [formData, setFormData] = useState({
+    email: "",
+    password: "",
+  });
 
-  const handleEmailChange = (e) => {
-    const enteredEmail = e.target.value;
-    setEmail(enteredEmail);
+  useEffect(() => {
+    usersState.isUserLoggedIn && navigate("/main");
+  }, [usersState.isUserLoggedIn, navigate]);
 
-    // Simple email validation using a regular expression
-    const emailPattern = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
-    const isValidEmail = emailPattern.test(enteredEmail);
-
-    // Update the state to indicate if the email is invalid
-    setIsInvalidEmail(!isValidEmail);
+  const onSubmit = async (e) => {
+    e.preventDefault();
+    try {
+      await login(dispatchUsers, formData);
+    } catch (err) {
+      console.log("err ->", err);
+    }
   };
 
-  const handlePasswordChange = (e) => {
-    const enteredPassword = e.target.value;
-    setPassword(enteredPassword);
-
-    // Password validation logic - requiring a minimum length of 6 characters
-    const isValidPassword = enteredPassword.length >= 6;
-
-    // Update the state to indicate if the password is invalid
-    setIsInvalidPassword(!isValidPassword);
+  const handleChange = (e, field) => {
+    const newValue = e.target.value;
+    setFormData({
+      ...formData,
+      [field]: newValue,
+    });
   };
 
-  const handleSignInClick = () => {
-    // Implement your sign-in logic here, e.g., sending the email and password to a server
-    console.log("Sign-In button clicked");
-  };
+  const inputs = [
+    {
+      headerText: "email",
+      placeholder: "your email",
+      defaultValue: "",
+    },
+    {
+      headerText: "password",
+      placeholder: "your password",
+      defaultValue: "",
+    },
+  ];
 
   return (
     <div className='welcome-page'>
-      {/* Logo image */}
       <img src={logoPlaceholder} alt='Logo' className='logoPlaceholder' />
 
-      <InputFieldWithHeader
-        headerText='email'
-        placeholder='Enter your email'
-        value={email}
-        onChange={handleEmailChange}
-      />
-      {isInvalidEmail && (
-        <p style={{ color: "red" }}>Please enter a valid email address.</p>
-      )}
-
-      <InputFieldWithHeader
-        headerText='password'
-        placeholder='Enter your password'
-        type='password'
-        value={password}
-        onChange={handlePasswordChange}
-      />
-      {isInvalidPassword && (
-        <p style={{ color: "red" }}>
-          Password must be at least 6 characters long.
-        </p>
-      )}
-
-      {/* Use the SignButton component with the handleSignInClick function */}
-      <SignButton text='LOG IN' onClick={handleSignInClick} />
-
-      {/* the RegistrationLink component */}
+      <form onSubmit={onSubmit} className='content'>
+        <Header title='Create Account' />
+        {inputs.map((input) => (
+          <div className='input-card' key={input.headerText}>
+            <label className='input-header-label'>{input.headerText}</label>
+            <input
+              className='input-header-input'
+              type='text'
+              placeholder={input.placeholder}
+              value={formData[input.headerText]}
+              onChange={(e) => handleChange(e, input.headerText)}
+            />
+          </div>
+        ))}
+        <input type='submit' className='sign-button' />
+      </form>
       <RegistrationLink />
     </div>
   );

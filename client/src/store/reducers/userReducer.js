@@ -1,19 +1,36 @@
 export const usersInitialState = {
   user: {},
-  listId: "6516ea8345752884008b65b6",
+  listId: "",
+  isUserLoggedIn: false,
 };
 
 export const usersReducer = (state, action) => {
   switch (action.type) {
-    case "FETCH_USERS_SUCCESS":
-      return {
-        data: action.payload,
-      };
-
     case "REGISTER_USER":
       return {
-        data: action.payload,
+        ...state,
+        user: action.payload.user,
+        listId: action.payload.user.habitListId,
+        isUserLoggedIn: true,
       };
+
+    case "LOGIN_USER":
+      return {
+        ...state,
+        user: action.payload.user,
+        listId: action.payload.user.habitListId,
+        isUserLoggedIn: true,
+      };
+
+    /* case "LOGOUT_USER" :
+      return{
+
+      }
+
+    case "DELETE_ACCOUNT":
+      return{
+
+      } */
 
     default:
       return state;

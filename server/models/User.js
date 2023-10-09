@@ -18,6 +18,8 @@ const userSchema = new mongoose.Schema({
     required: true,
   },
 
+  passwordConfirm: String,
+
   habitListId: {
     type: Schema.Types.ObjectId,
     ref: "HabitList",
@@ -26,6 +28,14 @@ const userSchema = new mongoose.Schema({
     type: Date,
     default: Date.now,
   },
+});
+
+userSchema.pre("save", async function (next) {
+  if (this.isModified("password")) {
+    this.password = await bcrypt.hash(this.password, 12);
+    this.passwordConfirm = undefined;
+  }
+  next();
 });
 
 userSchema.methods.correctPassword = async function (
