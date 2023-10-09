@@ -8,6 +8,7 @@ import "../../styles/MainScreen.css";
 import "./SettingsScreen.css";
 import DarkMode from "./DarkMode.jsx";
 import StrikeThrough from "./StrikeThrough.jsx";
+import Notifications from "./Notifications.jsx";
 
 const SettingsScreen = () => {
   return (
@@ -17,6 +18,7 @@ const SettingsScreen = () => {
         <hr class='line-separation'></hr>
         <DarkMode />
         <StrikeThrough />
+        <Notifications />
         <ChangePassword />
         <Logout />
         <DeleteAccount />

@@ -78,6 +78,8 @@ function ChangePassword() {
         {message && (
           <div className={success ? "success" : "error"}>{message}</div>
         )}
+
+        <hr class='line-separation'></hr>
       </div>
     </>
   );
