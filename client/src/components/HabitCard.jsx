@@ -25,7 +25,7 @@ const HabitCard = ({ habit }) => {
 
   const handleUpdateCard = async () => {
     await updateHabit(habit, newTitle, dispatchHabits, listId);
-    getHabits(dispatchHabits, usersState.listId);
+    await getHabits(dispatchHabits, usersState.listId);
   };
 
   const handleDeleteCard = async () => {

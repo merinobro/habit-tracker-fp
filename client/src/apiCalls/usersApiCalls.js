@@ -29,6 +29,16 @@ export const login = async (dispatchUsers, data) => {
   }
 };
 
+export const getMyData = async () => {
+  try {
+    const response = await axios.get("http://localhost:8000/auth/me");
+    return response.data;
+  } catch (error) {
+    console.error("Error fetching user data:", error);
+    throw error;
+  }
+};
+
 /*export const logout = async (dispatchUsers) => {
   try {
     await axios.get(`http://localhost:8000/auth/logout`),
