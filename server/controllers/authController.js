@@ -118,7 +118,7 @@ export const protect = async (req, res, next) => {
 
     next();
   } catch (error) {
-    next(error);
+    next();
   }
 };
 
@@ -138,6 +138,20 @@ export const deleteAccount = async (req, res, next) => {
       message: "success",
       statusCode: 200,
       data: "Account deleted successfully",
+    });
+  } catch (error) {
+    next(error);
+  }
+};
+
+export const getMe = (req, res, next) => {
+  try {
+    const { user, isAuthenticated, cookies } = req;
+    res.status(200).json({
+      message: "success",
+      user,
+      isAuthenticated,
+      jwtToken: cookies["jwtToken"],
     });
   } catch (error) {
     next(error);
