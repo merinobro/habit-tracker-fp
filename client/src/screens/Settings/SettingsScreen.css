@@ -16,10 +16,10 @@
 
 .line-separation {
   height: 1px;
-  left: 26px;
+  left: 20px;
   object-fit: cover;
   position: absolute;
   top: 460px;
   width: 314px;
-  color: black;
+  opacity: 0.3;
 }

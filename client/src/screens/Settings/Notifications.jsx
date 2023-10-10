@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
 import "../Settings/Notifications.css";
-import arrowdown from "../../assets/arrowdown.svg";
+import arrow from "../../assets/arrow.svg";
 
 const Notifications = () => {
   const [isChecked, setIsChecked] = useState(false);
-
+  
   
   const handleToggle = () => {
     setIsChecked(!isChecked);
@@ -28,9 +28,8 @@ const Notifications = () => {
 
   return (
     <>
-      <button className='text-wrapper-6'>Notifications</button>
-      <hr></hr>
-      <img src={arrowdown} alt='Logo' className='arrowdown' />
+      <div className='text-wrapper-6'>Notifications</div>
+      <img src={arrow} alt='Logo' id='arrow'  style={{ color: 'red' }}/>
       <label className='toggle-button'>
         <input
           type='checkbox'
@@ -40,7 +39,7 @@ const Notifications = () => {
         />
         <span className='slider round'></span>
       </label>
-
+      <hr className='line-separation-3'></hr>
     </>
   );
 };

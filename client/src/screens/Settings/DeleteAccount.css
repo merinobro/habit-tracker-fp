@@ -1,5 +1,6 @@
 .confirmation-message {
     color: black;
+    font-size: 14px;
   }
   
   .delete-button {
@@ -24,3 +25,8 @@
     top: 479px;
     white-space: nowrap;
   }
+
+button {
+  cursor: pointer;
+  border: none;
+}

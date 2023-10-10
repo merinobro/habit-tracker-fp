@@ -2,7 +2,14 @@ import React from "react";
 import "../Settings/StrikeThrough.css";
 
 const StrikeThrough = () => {
-  return <button className='text-wrapper-5 '>StrikeThrough</button>;
+  return (
+
+    <div>
+    <div className='text-wrapper-5 '>StrikeThrough</div>
+
+    <hr className="line-separation-2 "></hr>
+    </div>
+  )
 };
 
 export default StrikeThrough;

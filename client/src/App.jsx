@@ -6,10 +6,16 @@ import SignUpScreen from "./screens/SignUpScreen";
 import SettingsScreen from "./screens/Settings/SettingsScreen";
 import ProgressReportScreen from "./screens/ProgressReportScreen";
 import MainScreen from "./screens/MainScreen";
+import { useTheme } from "./store/themeContext";
+
 
 function App() {
+
+  const { isDarkTheme } = useTheme();
   return (
-    <div className='App'>
+  
+   
+    <div className={`App ${isDarkTheme ? 'dark' : 'light'}`}>
       <Routes>
         <Route path='/' element={<WelcomeScreen />} />
         <Route path='/signup' element={<SignUpScreen />} />
@@ -18,6 +24,10 @@ function App() {
         <Route path='/progress-report' element={<ProgressReportScreen />} />
       </Routes>
     </div>
+   
+    
+
+    
   );
 }
 

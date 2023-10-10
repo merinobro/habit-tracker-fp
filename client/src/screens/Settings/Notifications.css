@@ -12,9 +12,18 @@
     top: 272px;
     white-space: nowrap;
   }
+ 
+  .line-separation-3 {
+    height: 1px;
+    left: 22px;
+    object-fit: cover;
+    position: absolute;
+    top: 320px;
+    width: 314px;
+    opacity: 0.3;
+  }
 
-  .arrowdown {
-    color: #000000;
+  #arrow {   
     font-weight: 400;
     height: 34px;
     left: 300px;
@@ -25,6 +34,7 @@
     top: 272px;
     white-space: nowrap;
     cursor: pointer;
+    /* color: rgb(255, 0, 170) ; */
   }
 
 .toggle-button {
@@ -91,3 +101,4 @@
 .toggle-checkbox:checked + .slider:before {
   transform: translateX(20px); 
 }
+

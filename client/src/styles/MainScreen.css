@@ -1,7 +1,8 @@
-
-
+/* 
 .main-screen-light {
-  background-color: rgba(255, 255, 255, 1);
+  background-color: linear-gradient(170deg, #ECECEA 64.29%, #FFF 93.2%);
+
+
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
@@ -12,11 +13,14 @@
     rgb(236, 236, 234) 68.71%,
     rgb(255, 255, 255) 100%
   );
-  background-color: rgba(255, 255, 255, 1);
+  background-color: linear-gradient(170deg, #ECECEA 64.29%, #FFF 93.2%);
+
+
   height: 640px;
   overflow: hidden;
   position: relative;
   width: 360px;
+  color: black;
 }
 .main-screen-light .div {
   background: linear-gradient(
@@ -24,7 +28,94 @@
     rgb(236, 236, 234) 68.71%,
     rgb(255, 255, 255) 100%
   );
-  background-color: rgba(255, 255, 255, 1);
+  background-color:linear-gradient(170deg, #ECECEA 64.29%, #FFF 93.2%);
+
+
+  height: 640px;
+  overflow: hidden;
+  position: relative;
+  width: 360px;
+}
+ */
+ 
+ .light {
+  background-color: linear-gradient(170deg, #ECECEA 64.29%, #FFF 93.2%);
+
+
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  width: 100%;
+  background: linear-gradient(
+    180deg,
+    rgb(236, 236, 234) 68.71%,
+    rgb(255, 255, 255) 100%
+  );
+  background-color:linear-gradient(170deg, #ECECEA 64.29%, #FFF 93.2%);
+
+
+  height: 640px;
+  overflow: hidden;
+  position: relative;
+  width: 360px;
+  color: black;
+}
+
+.light .div {
+  background: linear-gradient(
+    180deg,
+    rgb(236, 236, 234) 68.71%,
+    rgb(255, 255, 255) 100%
+  );
+  background-color: linear-gradient(
+    170deg, 
+    #ECECEA 64.29%,
+     #FFF 93.2%
+  );
+
+
+  height: 640px;
+  overflow: hidden;
+  position: relative;
+  width: 360px;
+}
+
+.dark div{
+  color: white;
+}
+
+.dark {
+  background-color: rgb(51, 47, 47);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  width: 100%;
+  background: linear-gradient(
+    180deg,
+    rgb(29, 29, 27) 68.71%,
+    rgb(12, 12, 12) 100%
+  );
+  background-color: rgb(22, 21, 21);
+  height: 640px;
+  overflow: hidden;
+  position: relative;
+  width: 360px;
+  color: white;
+}
+
+.dark .div {
+  background: linear-gradient(
+    180deg,
+    rgb(17, 17, 16) 68.71%,
+    rgb(15, 15, 15) 100%
+  );
+  background-color:linear-gradient(
+    170deg, 
+    #ECECEA 64.29%,
+    #FFF 93.2%
+  );
   height: 640px;
   overflow: hidden;
   position: relative;
@@ -39,4 +130,6 @@
   margin-top: 20px; 
   overflow-y: auto; 
   max-height: 70%; 
+  color: black;
 }
+

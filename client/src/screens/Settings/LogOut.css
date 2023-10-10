@@ -12,3 +12,15 @@
     top: 410px;
     white-space: nowrap;
   }
+
+.line-separation-8 {
+  
+    height: 1px;
+    left: 1px;
+    object-fit: cover;
+    position: absolute;
+    top: -300px;
+    width: 314px;
+    opacity: 0.3;
+  
+}

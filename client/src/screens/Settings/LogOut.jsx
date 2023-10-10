@@ -8,8 +8,8 @@ function Logout() {
 
   const handleLogout = async () => {
     try {
-      // Send a GET or POST request to the server-side logout endpoint
-      const response = await axios.post("/api/logout"); // Change the URL if needed
+      
+      const response = await axios.post("/api/logout"); //! Change the URL 
 
       if (response.data.statusCode === 200) {
         setMessage("Logged out successfully.");
@@ -26,11 +26,14 @@ function Logout() {
 
   return (
     <div className='text-wrapper-2'>
-      <button onClick={handleLogout}>Logout</button>
+      <div onClick={handleLogout}>Logout</div>
       {message && (
-        <div className={success ? "success" : "error"}>{message}</div>
+        <div className={success ? "success" : "error"} style={{ fontSize: success ? "inherit" : "12px" }}>{message}</div>
       )}
+
+      <hr className="line-separation-8"></hr>
     </div>
+
   );
 }
 
