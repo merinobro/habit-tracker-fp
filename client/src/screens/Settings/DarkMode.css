@@ -13,14 +13,16 @@
     white-space: nowrap;
   }
 
-  .line-separation-4 {
+  .line-separation-1 {
     height: 1px;
-    left: 6px;
+    left: 20px;
     object-fit: cover;
     position: absolute;
-    top: 45px;
+    top: 180px;
     width: 314px;
-    color: #3f3d39;
+    opacity: 0.3;
   }
 
-   
+
+
+  

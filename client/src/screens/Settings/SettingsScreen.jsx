@@ -5,20 +5,21 @@ import DeleteAccount from "./DeleteAccount.jsx";
 import MenuBar from "../../components/Menubar.jsx";
 import "../../styles/Menubar.css";
 import "../../styles/MainScreen.css";
-import "./SettingsScreen.css";
+import "../Settings/SettingsScreen.css";
 import DarkMode from "./DarkMode.jsx";
 import StrikeThrough from "./StrikeThrough.jsx";
-import Notifications from "./Notifications.jsx";
+import Notifications from "../Settings/Notifications.jsx";
 
 const SettingsScreen = () => {
+  
   return (
     <>
-      <div className='main-screen-light'>
-        <h1 className='settings-heading '>Settings</h1>
-        <hr class='line-separation'></hr>
+      <div className="div">
+        <h1 className="settings-heading ">Settings</h1>
+        <hr className="line-separation"></hr>
         <DarkMode />
         <StrikeThrough />
-        <Notifications />
+        <Notifications/>
         <ChangePassword />
         <Logout />
         <DeleteAccount />

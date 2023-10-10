@@ -12,3 +12,14 @@
     top: 202px;
     white-space: nowrap;
   }
+
+  
+  .line-separation-2 {
+    height: 1px;
+    left: 22px;
+    object-fit: cover;
+    position: absolute;
+    top: 250px;
+    width: 314px;
+    opacity: 0.3;
+  }

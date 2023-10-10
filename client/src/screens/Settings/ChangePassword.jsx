@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import axios from "axios";
-import "./Changepassword.css";
+import "../Settings/ChangePassword.css";
 
 function ChangePassword() {
   const [currentPassword, setCurrentPassword] = useState("");
@@ -13,11 +13,11 @@ function ChangePassword() {
     e.preventDefault();
 
     try {
-      // Send a request to the server to change the password
-      const response = await axios.post("/api/change-password", {
+      //!api yet to update
+      const response = await axios.post("/api/change-password" , {
         currentPassword,
         newPassword,
-      });
+      }); 
 
       if (response.data.success) {
         setMessage("Password changed successfully.");
@@ -38,7 +38,7 @@ function ChangePassword() {
 
   return (
     <>
-      <div className='text-wrapper-3'>
+      <div className={`text-wrapper-3 ${showPasswordFields ? 'shift-up' : ''}`}>
         <form onSubmit={handleChangePassword}>
           {showPasswordFields && (
             <div className='password-field'>
@@ -69,18 +69,17 @@ function ChangePassword() {
             </div>
           )}
           {!showPasswordFields && (
-            <button type='button' onClick={handleShowPasswordFields}>
+            <div type='button' onClick={handleShowPasswordFields}>
               Change Password
-            </button>
+            </div>
           )}
-          {showPasswordFields && <button type='submit'>Change Password</button>}
+          {showPasswordFields && <div type='submit'>Change Password</div>}
         </form>
         {message && (
           <div className={success ? "success" : "error"}>{message}</div>
         )}
-
-        <hr class='line-separation'></hr>
       </div>
+      <hr className="line-separation-4"></hr>
     </>
   );
 }

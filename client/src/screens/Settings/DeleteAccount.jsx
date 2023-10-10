@@ -49,7 +49,8 @@ function DeleteAccount() {
           Delete Account
         </button>
       )}
-    </div>
+
+       </div>
   );
 }
 
