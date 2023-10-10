@@ -8,6 +8,8 @@ import ProgressReportCard from "../components/ProgressReportCard";
 import Header from "../components/Header.jsx";
 import Menubar from "../components/Menubar.jsx";
 
+import "../styles/ProgressReportStyle.css"
+
 const ProgressReportScreen = () => {
   return (
     <div className='progress-screen'>
