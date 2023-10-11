@@ -181,7 +181,7 @@ export const updateProgress = async (
       `http://localhost:8000/habits/${listId}`,
       {
         habitId: _id,
-        progress: completed ? progress - 1 : progress + 1,
+        progress: completed ? progress : progress + 1,
         completed: !completed,
       }
     );
