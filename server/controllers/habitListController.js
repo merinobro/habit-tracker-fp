@@ -32,7 +32,12 @@ export const createHabit = async (req, res, next) => {
       { upsert: true, new: true }
     ).populate("habitList");
 
-    successHandler(res, 200, habitList);
+    // Extract the newly added habit
+    const newHabit = habitList.habitList.find(
+      (habit) => habit.name === req.body.name
+    );
+
+    successHandler(res, 200, { habit: newHabit });
   } catch (err) {
     next(err);
   }
@@ -51,23 +56,26 @@ export const updateHabitById = async (req, res, next) => {
     // Extract relevant data for updating the habit
     const { name, habitId } = req.body;
 
-    const updatedHabit = await HabitList.findByIdAndUpdate(
+    const updatedHabitList = await HabitList.findByIdAndUpdate(
       req.params.id,
-
       {
         $set: {
           "habitList.$[item].name": name,
         },
       },
-
       { arrayFilters: [{ "item._id": habitId }], new: true }
     ).populate("habitList");
 
-    if (!updatedHabit) {
+    if (!updatedHabitList) {
       return res.status(404).json({ message: "Habit not found" });
     }
 
-    successHandler(res, 200, updatedHabit);
+    // Extract the updated habit
+    const updatedHabit = updatedHabitList.habitList.find(
+      (habit) => habit._id.toString() === habitId
+    );
+
+    successHandler(res, 200, { habit: updatedHabit });
   } catch (err) {
     next(err);
   }
@@ -105,13 +113,14 @@ export const updateProgress = async (req, res, next) => {
 */
 export const deleteHabitById = async (req, res, next) => {
   try {
-    const deleted = await HabitList.findByIdAndUpdate(
+    const updatedHabitList = await HabitList.findByIdAndUpdate(
       req.params.listId,
       { $pull: { habitList: { _id: req.params.habitId } } },
       { new: true }
     ).populate("habitList");
 
-    successHandler(res, 200, deleted);
+    // Instead of returning the entire updated habit list, just send the deleted habit's ID for confirmation.
+    successHandler(res, 200, { deletedHabitId: req.params.habitId });
   } catch (err) {
     next(err);
   }

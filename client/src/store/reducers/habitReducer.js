@@ -15,14 +15,18 @@ export const habitsReducer = (state, action) => {
         habits: [...state.habits, action.payload],
       };
 
-    case "DELETE_HABIT_CARD":
-      return {
-        habits: state.habits.filter((habit) => habit._id !== action.payload),
-      };
-
     case "UPDATE_HABIT_CARD":
       return {
-        habits: action.payload,
+        ...state,
+        habits: state.habits.map((habit) =>
+          habit._id === action.payload._id ? action.payload : habit
+        ),
+      };
+
+    case "DELETE_HABIT_CARD":
+      return {
+        ...state,
+        habits: state.habits.filter((habit) => habit._id !== action.payload),
       };
 
     case "UPDATE_PROGRESS":

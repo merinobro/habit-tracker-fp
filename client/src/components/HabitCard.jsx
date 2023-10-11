@@ -10,9 +10,10 @@ import { DataContext } from "../store/context";
 
 const HabitCard = ({ habit }) => {
   const { dispatchHabits, usersState } = useContext(DataContext);
+
   const { listId } = usersState;
 
-  const [newTitle, setNewTitle] = useState(habit.name || "");
+  const [newTitle, setNewTitle] = useState(habit.name);
   const [isEditing, setIsEditing] = useState(false);
 
   const handleTextChange = (e) => {
