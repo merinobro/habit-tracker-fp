@@ -21,19 +21,22 @@
   font-family: "Commissioner-Regular", sans-serif;
 
   padding: 10px;
-  margin: 30px;
-  max-width: 250px; /* Adjust the width as needed */
+  margin: 15px;
+  max-width: 350px; /* Adjust the width as needed */
   text-align: center;
-  border-radius: 5px;
+  border-radius: 8px;
   background-color: #ffffff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  border: 1px solid #e1e1e1;
 
   flex-direction: column;
   align-items: center;
-  gap: 16px;
+
   margin-top: 15px;
   margin-bottom: 15px;
   overflow-y: auto;
   max-height: 70%;
+  width: 90%;
 }
 
 .top-section {
