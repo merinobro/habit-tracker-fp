@@ -64,7 +64,7 @@ function WelcomeScreen() {
             <label className='input-header-label'>{input.headerText}</label>
             <input
               className='input-header-input'
-              type='text'
+              type={input.headerText === "password" ? "password" : "text"}
               placeholder={input.placeholder}
               value={formData[input.headerText]}
               onChange={(e) => handleChange(e, input.headerText)}
