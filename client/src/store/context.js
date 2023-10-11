@@ -25,15 +25,14 @@ export const ContextProvider = ({ children }) => {
     }
   }, [isUserLoggedIn, listId]);
 
-
-useEffect(() => {
-  (async () => {
-    const response = await getMyData();
-    if (response && response.isAuthenticated) {
-      dispatchUsers({ type: "LOGIN_USER", payload: response });
-    }
-  })();
-}, []);
+  useEffect(() => {
+    (async () => {
+      const response = await getMyData();
+      if (response && response.isAuthenticated) {
+        dispatchUsers({ type: "LOGIN_USER", payload: response });
+      }
+    })();
+  }, []);
 
   return (
     <DataContext.Provider
