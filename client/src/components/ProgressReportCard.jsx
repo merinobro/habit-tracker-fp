@@ -1,15 +1,7 @@
 import React from "react";
 
-// import Header from "./Header.jsx";
-// import Menubar from "./Menubar.jsx";
-
-const ProgressReportCard = () => {
-  // Hardcoded values
-  const habitName = "Eat";
-  const progressInDays = 27;
+const ProgressReportCard = ({ habitName, progressInDays }) => {
   const totalDays = 30;
-
-  // Calculate progress percentage
   const progressPercentage = (progressInDays / totalDays) * 100;
 
   return (
