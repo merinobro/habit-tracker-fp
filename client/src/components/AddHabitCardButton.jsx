@@ -3,7 +3,7 @@ import "../styles/AddHabitCardButton.css";
 import addHabitCircleButton from "../assets/add-habit-circle-button.svg";
 import { DataContext } from "../store/context";
 
-const AddHabitCardButton = ({ addHabitCard, setHabitName, habitName }) => {
+const AddHabitCardButton = ({ addHabitCard, setHabitName, habitName, disabled}) => {
   const { habitsState } = useContext(DataContext);
 
   const handleAddHabitClick = () => {
@@ -15,7 +15,7 @@ const AddHabitCardButton = ({ addHabitCard, setHabitName, habitName }) => {
   };
 
   return (
-    <div className='add-habit-card-button'>
+    <div className='dark-theme-image add-habit-card-button '>
       <img
         src={addHabitCircleButton}
         alt='Add HabitCard'
