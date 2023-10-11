@@ -71,7 +71,7 @@ const HabitCard = ({ habit }) => {
             </>
           )}
         </div>
-        <div className='card-options' onClick={toggleEditing}>
+        <div className='card-options dark-theme-image' onClick={toggleEditing}>
           {isEditing ? (
             <img
               src={require("../assets/save.svg").default}

@@ -71,7 +71,7 @@
   background-color: linear-gradient(
     170deg, 
     #ECECEA 64.29%,
-     #FFF 93.2%
+     #FFF 80.2%
   );
 
 
@@ -92,11 +92,7 @@
   justify-content: flex-start;
   align-items: center;
   width: 100%;
-  background: linear-gradient(
-    180deg,
-    rgb(29, 29, 27) 68.71%,
-    rgb(12, 12, 12) 100%
-  );
+  background: linear-gradient(170deg, #ECECEA 0.8%, #3F3D39 25.83%);
   background-color: rgb(22, 21, 21);
   height: 640px;
   overflow: hidden;
@@ -106,16 +102,7 @@
 }
 
 .dark .div {
-  background: linear-gradient(
-    180deg,
-    rgb(17, 17, 16) 68.71%,
-    rgb(15, 15, 15) 100%
-  );
-  background-color:linear-gradient(
-    170deg, 
-    #ECECEA 64.29%,
-    #FFF 93.2%
-  );
+  background: linear-gradient(170deg, #ECECEA 0.8%, #3F3D39 25.83%);
   height: 640px;
   overflow: hidden;
   position: relative;
@@ -133,3 +120,6 @@
   color: black;
 }
 
+.dark .dark-theme-image {
+  filter: brightness(0) invert(1);
+}
