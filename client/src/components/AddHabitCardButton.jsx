@@ -1,14 +1,25 @@
-import React from "react";
+import React, { useContext } from "react";
 import "../styles/AddHabitCardButton.css";
 import addHabitCircleButton from "../assets/add-habit-circle-button.svg";
+import { DataContext } from "../store/context";
 
 const AddHabitCardButton = ({ addHabitCard, setHabitName, habitName }) => {
+  const { habitsState } = useContext(DataContext);
+
+  const handleAddHabitClick = () => {
+    if (habitsState.habits.length < 5) {
+      addHabitCard();
+    } else {
+      alert("You cannot add more than 5 habits.");
+    }
+  };
+
   return (
     <div className='add-habit-card-button'>
       <img
         src={addHabitCircleButton}
         alt='Add HabitCard'
-        onClick={addHabitCard}
+        onClick={handleAddHabitClick}
       />
       <input
         type='text'

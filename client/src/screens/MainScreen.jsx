@@ -25,7 +25,7 @@ const MainScreen = () => {
   return (
     <div className='main-screen-light'>
       <div className='div'>
-        <Header />
+      <Header title='List of Habits' />
 
         <div className='habit-card-container'>
           {habitsState.habits.length > 0 &&
