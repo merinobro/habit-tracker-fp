@@ -2,7 +2,7 @@
 
 .label {
     
-    padding-top: 65px;
+    padding-top: 55px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -21,7 +21,7 @@
     letter-spacing: -0.26px;
     line-height: normal;
     position: relative;
-    bottom: 10px; 
+    bottom: 20px; 
   }
   
   .registration-link {
@@ -33,5 +33,6 @@
     font-weight: 400;
     letter-spacing: -0.26px;
     line-height: normal;
+    margin-top: -15px; 
     
   }
