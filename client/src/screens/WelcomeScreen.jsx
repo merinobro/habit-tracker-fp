@@ -59,7 +59,7 @@ function WelcomeScreen() {
       <img src={logo} alt='Logo' className='logo' />
 
       <form onSubmit={onSubmit} className='content'>
-        <Header title='Create Account' />
+        <Header title='Sign in' />
         {inputs.map((input) => (
           <div className='input-card' key={input.headerText}>
             <label className='input-header-label'>{input.headerText}</label>
