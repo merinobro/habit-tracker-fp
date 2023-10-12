@@ -14,6 +14,31 @@
   padding: 20px; /* Add padding for spacing */
 }
 
+/* LOGO */
+.logo {
+  margin-top: 5%;
+  margin-bottom: 19%;
+  width: 40%;
+  height: auto;
+}
+
+/* Styles for the content (inputs, button, and text) */
+.content {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.header {
+  align-self:self-start;
+}
+
+.input-card {
+  margin-bottom: 1rem;
+}
+
 .sign-button {
   margin-top: 55px;
   width: 45%;
@@ -40,82 +65,3 @@
   cursor: pointer;
 }
 
-/* -------- Commented out all of George's code from 0927 below ---- */
-/* * { margin: 0; padding: 0; box-sizing: border-box; } 
-
-.signup-form {
-    max-width: 400px;
-    margin: 0 auto;
-    padding: 20px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    background-color: #fff;
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
-   
-  }
-  
-   h2 {
-    text-align: center;
-    margin-bottom: 20px;
-    font-family: 'Commissioner', sans-serif;
-    color: rgb(0, 0, 0);
-    font-size:20px;
-    padding: 5px;
-    
-  }
-
-  
-  label {
-    display: block;
-    margin-bottom: 5px;
-    padding: 5px;
-    color: rgb(0, 8, 6);
-    font-family: 'Commissioner', sans-serif;
-    text-align: center;
-   
-    
-  }
-  
-  input[type="text"],
-  input[type="email"],
-  input[type="password"] {
-    width: 20%;
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    
-  
-  }
-  
-  /* comment from Ruppert 0927: you use the selector "button" – yet no such element exists in the JS file? */
-
-/*    button {
-    width: 7%;
-    padding: 10px;
-    background-color: #3d3e3e;
-    color: #e8e1e1;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 15px;
-    margin: 10px;
-  }
-  
-  button:hover {
-    background-color: #706f6f;
-  }  
-
-  .container{
-   
-    background-color: #f5f5f5;
-    padding: auto;
-    width: auto;
-    height: auto; 
-    align-items: center;
-    
-   
- 
-   
-  
-   
-} */

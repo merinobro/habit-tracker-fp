@@ -2,6 +2,7 @@ import React, { useContext, useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import Header from "../components/Header";
 import "../styles/signUpScreen.css";
+import logo from "../assets/Logo.svg"
 import { signup } from "../apiCalls/usersApiCalls";
 import { DataContext } from "../store/context.js";
 
@@ -56,8 +57,10 @@ function SignUpScreen() {
 
   return (
     <div className='signup-screen-container'>
-      <form onSubmit={onSubmit}>
-        <Header title='Create Account' />
+      <img src={logo} alt='Logo' className='logo' />
+
+      <form onSubmit={onSubmit} className="content">
+        <Header title='Create Account' className='header'/>
         {inputs.map((input) => (
           <div className='input-card' key={input.headerText}>
             <label className='input-header-label'>{input.headerText}</label>

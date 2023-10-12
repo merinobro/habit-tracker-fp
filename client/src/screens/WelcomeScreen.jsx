@@ -3,7 +3,6 @@ import { useNavigate } from "react-router-dom";
 import "../styles/WelcomeScreen.css";
 import "../styles/InputFieldWithHeader.css";
 
-/* import logoPlaceholder from "../assets/logoPlaceholder.png"; */
 import logo from "../assets/Logo.svg"
 
 import RegistrationLink from "../components/RegistrationLink";
@@ -59,7 +58,7 @@ function WelcomeScreen() {
       <img src={logo} alt='Logo' className='logo' />
 
       <form onSubmit={onSubmit} className='content'>
-        <Header title='Sign in' />
+        <Header className='header' title='Sign in' />
         {inputs.map((input) => (
           <div className='input-card' key={input.headerText}>
             <label className='input-header-label'>{input.headerText}</label>
