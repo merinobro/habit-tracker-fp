@@ -30,8 +30,9 @@
 }
 
 /* LOGO PLACEHOLDER */
-.logoPlaceholder {
-  max-width: 200px;
+.logo {
+  margin-top: 5%;
+  width: 40%;
   height: auto;
 }
 
