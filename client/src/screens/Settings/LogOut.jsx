@@ -1,24 +1,24 @@
-import React, { useState } from "react";
-import axios from "axios";
+import React, { useState, useContext } from "react";
 import "../Settings/LogOut.css";
+import { logout } from "../../apiCalls/usersApiCalls";
+import { DataContext } from "../../store/context";
+import { useNavigate } from "react-router-dom";
 
 function Logout() {
   const [message, setMessage] = useState("");
   const [success, setSuccess] = useState(false);
+  const { dispatchUsers } = useContext(DataContext);
+
+  const navigate = useNavigate();
 
   const handleLogout = async () => {
     try {
-      
-      const response = await axios.post("/api/logout"); //! Change the URL 
-
-      if (response.data.statusCode === 200) {
-        setMessage("Logged out successfully.");
-        setSuccess(true);
-      } else {
-        setMessage("An error occurred. Please try again later.");
-        setSuccess(false);
-      }
+      await logout(dispatchUsers);
+      navigate("/", { replace: true });
+      setMessage("Logged out successfully.");
+      setSuccess(true);
     } catch (error) {
+      console.error(error);
       setMessage("An error occurred. Please try again later.");
       setSuccess(false);
     }
@@ -28,12 +28,15 @@ function Logout() {
     <div className='text-wrapper-2'>
       <div onClick={handleLogout}>Logout</div>
       {message && (
-        <div className={success ? "success" : "error"} style={{ fontSize: success ? "inherit" : "12px" }}>{message}</div>
+        <div
+          className={success ? "success" : "error"}
+          style={{ fontSize: success ? "inherit" : "12px" }}
+        >
+          {message}
+        </div>
       )}
-
-      <hr className="line-separation-8"></hr>
+      <hr className='line-separation-8'></hr>
     </div>
-
   );
 }
 
