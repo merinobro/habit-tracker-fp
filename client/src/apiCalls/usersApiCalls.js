@@ -48,7 +48,7 @@ export const logout = async (dispatchUsers) => {
   }
 };
 
-/*
+/* 
 export const deleteAccount = async (dispatchUsers) => {
   try {
     const response = await axios.delete(`http://localhost:8000/auth/delete-account`, user);
@@ -57,3 +57,4 @@ export const deleteAccount = async (dispatchUsers) => {
     console.log(error);
   }
 }; 
+ */
