@@ -22,15 +22,11 @@ export const usersReducer = (state, action) => {
         isUserLoggedIn: true,
       };
 
-    /* case "LOGOUT_USER" :
-      return{
-
-      }
+    case "LOGOUT_USER":
+      return usersInitialState;
 
     case "DELETE_ACCOUNT":
-      return{
-
-      } */
+      return usersInitialState;
 
     default:
       return state;

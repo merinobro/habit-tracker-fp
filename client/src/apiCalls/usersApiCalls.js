@@ -39,14 +39,15 @@ export const getMyData = async () => {
   }
 };
 
-/*export const logout = async (dispatchUsers) => {
+export const logout = async (dispatchUsers) => {
   try {
-    await axios.get(`http://localhost:8000/auth/logout`),
+    await axios.get(`http://localhost:8000/auth/logout`);
     dispatchUsers({type: "LOGOUT_USER"})
   } catch (error) {
     console.log(error);
   }
 };
+/*
 export const deleteAccount = async (dispatchUsers) => {
   try {
     await axios.delete(`http://localhost:8000/auth/delete-account`);
