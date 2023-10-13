@@ -101,3 +101,68 @@
   transform: translateX(20px); 
 }
 
+.dropdown {
+  position: absolute;
+  top: 320px;
+  left: 26px;
+  width: 300px;
+  background-color: #fff;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  z-index: 1;
+  text-align: left;
+  display: flex;
+  align-items: center;
+}
+
+ .habitLines{
+  flex: 1; 
+  margin-right: 10px; 
+  color: black;
+  align-items: center;
+  justify-content: space-between;
+  list-style: none;
+  padding: 0;
+} 
+
+
+.habit-container {
+  position: relative;
+}
+
+.habit-container::after {
+  content: "";
+  display: block;
+  height: 1px;
+  object-fit: cover;
+  width: 100%;
+  opacity: 0.3;
+  margin-top: 10px; 
+  position: absolute;
+  bottom: 0;
+} 
+
+.habits {
+  font-size: 14px;
+  list-style: none;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.habits input {
+  margin-left: 10px;  
+  width: 100px;
+}
+
+input[type='time'] {
+  text-align: right;
+}
+
+
+
+
+
+
