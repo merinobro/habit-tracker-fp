@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import axios from "axios";
 
+// this is a comment
+
 import "./DeleteAccount.css";
 
 function DeleteAccount() {
@@ -55,3 +57,5 @@ function DeleteAccount() {
 }
 
 export default DeleteAccount;
+
+
