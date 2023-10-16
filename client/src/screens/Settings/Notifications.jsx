@@ -27,45 +27,7 @@ const Notifications = () => {
 
   }, [habitsState.habits]);
 
-  // useEffect(() => {
-  //     console.log("Habit Times", habitTimes)
-  //     for(const habitId in habitTimes) {
-  //       const habitTime = habitTimes[habitId];
-  //       const habitIndex = habits.findIndex((habit) => {
-  //           return habit._id === habitId;
-  //         }, [habits])
-
-
-  //       const habitCopy = {...habits[habitIndex]}
-
-  //      habitCopy.time = {
-  //       hour : habitTime.split(":")[0],
-  //       minute: habitTime.split(":")[1]
-  //      }
-  //      setHabits((prevHabits)=> {
-         
-  //         prevHabits[habitIndex] = habitCopy;
-
-  //         return prevHabits;
-  //      })
-  //     }
-
-  // },)
-
-  // useEffect(() => {
-  //   habits.forEach( async (habit) => {
-  //     try {
-  //       const response = await axios.put(`http://localhost:8000/habits/${habit._id}`, habit);
-  //   // Dispatching the updated habit directly to the state
-  //   dispatchHabits({
-  //     type: "UPDATE_HABIT_CARD",
-  //     payload: response.data.data.habit, // Assuming the updated habit is returned in response.data.data.habit
-  //   });
-  // } catch (error) {
-  //   console.error(error);
-  // }
-  //   })
-  // }, [habits])
+  
 
   const handleTimeChange = (habitId, event) => {
     const { value } = event.target;
