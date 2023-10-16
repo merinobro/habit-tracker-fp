@@ -17,6 +17,6 @@ router.get("/logout", logout);
 router.use(protect);
 router.get("/me", getMe);
 
-// router.delete("/delete-account", deleteAccount);
+router.delete("/delete-account", deleteAccount);
 
 export default router;
