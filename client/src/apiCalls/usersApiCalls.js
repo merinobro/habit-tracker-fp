@@ -49,12 +49,12 @@ export const logout = async (dispatchUsers) => {
 };
 
 
-// export const deleteAccount = async (dispatchUsers) => {
-//   try {
-//     const response = await axios.delete(`http://localhost:8000/auth/delete-account`, user);
-//     dispatchUsers({type: "DELETE_ACCOUNT", payload:response.data})
-//   } catch (error) {
-//     console.log(error);
-//   }
-// }; 
+export const deleteAccount = async (dispatchUsers, user) => {
+   try {
+     const response = await axios.delete(`http://localhost:8000/auth/delete-account`, user);
+    dispatchUsers({type: "DELETE_ACCOUNT", payload:response.data})
+   } catch (error) {
+    console.log(error);
+   }
+ }; 
  
