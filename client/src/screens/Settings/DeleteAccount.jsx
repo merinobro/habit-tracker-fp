@@ -2,6 +2,8 @@ import React, { useContext, useState, useEffect } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 
+// this is a comment
+
 import "./DeleteAccount.css";
 
 import { deleteAccount } from "../../apiCalls/usersApiCalls.js";
@@ -52,3 +54,5 @@ function DeleteAccount() {
 }
 
 export default DeleteAccount;
+
+
