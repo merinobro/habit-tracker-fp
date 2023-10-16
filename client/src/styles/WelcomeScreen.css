@@ -15,9 +15,11 @@
   padding: 5%; /* Add padding for spacing */
 }
 
-/* Styles for the header/logo */
-.header {
-  margin-top: 5%; /* Adjust as needed */
+/* LOGO */
+.logo {
+  margin-top: 5%;
+  width: 40%;
+  height: auto;
 }
 
 /* Styles for the content (inputs, button, and text) */
@@ -27,13 +29,11 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  margin-top: -5rem;
 }
 
-/* LOGO PLACEHOLDER */
-.logoPlaceholder {
-  max-width: 200px;
-  height: auto;
-}
+/* Styles for the header */
+
 
 .sign-button {
   margin-top: 11%;
