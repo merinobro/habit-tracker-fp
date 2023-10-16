@@ -25,6 +25,12 @@ const habitSchema = new Schema({
         type: Date,
         default: Date.now,
       },
+
+      time:{
+        hour:String,
+        minute:String,
+      }
+      
     },
   ],
 });
